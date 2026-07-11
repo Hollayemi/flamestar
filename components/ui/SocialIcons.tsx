@@ -1,4 +1,5 @@
 import type { SVGProps } from "react";
+import { FaTwitter, FaInstagram } from "react-icons/fa"
 
 type IconProps = SVGProps<SVGSVGElement>;
 
@@ -13,19 +14,13 @@ const base = {
 
 export function IconX(props: IconProps) {
   return (
-    <svg {...base} {...props}>
-      <path d="M4 4l16 16M20 4L4 20" />
-    </svg>
+    <FaTwitter />
   );
 }
 
 export function IconInstagram(props: IconProps) {
   return (
-    <svg {...base} {...props}>
-      <rect x="3" y="3" width="18" height="18" rx="5" />
-      <circle cx="12" cy="12" r="4" />
-      <circle cx="17" cy="7" r="0.8" fill="currentColor" stroke="none" />
-    </svg>
+   <FaInstagram />
   );
 }
 

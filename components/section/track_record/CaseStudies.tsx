@@ -11,24 +11,24 @@ export type CaseStudiesProps = {
 };
 
 const defaultHighlight: CaseStudyHighlightProps = {
-  title: "How We Helped a Family Office Diversify Into Fixed Income",
+  title: "Chime here giant note wiggle manager switch cta.",
   description:
-    "A closer look at how we restructured a concentrated equity portfolio into a balanced, income-generating allocation within six months.",
-  href: "/insights/news",
+    "Heads-up tomorrow create when functional quick three lunch lot moving cross done marginalised paradigm if hop picture globalize innovation let productive invite winning support.",
+  href: "/market-insights/insight",
 };
 
 const defaultFeatured: ArticleCardProps = {
-  image: "/images/case-study-market-outlook.jpg",
+  image: "/images/news1.webp",
   category: "Market Outlook",
-  excerpt: "Our latest read on rates, liquidity, and positioning across the quarter ahead.",
+  excerpt: "Or loop territories container creep model anomalies mifflin going forward break finance.",
   date: "02/10/2025",
   readTime: "3 mins read",
-  href: "/insights/news",
+  href: "/market-insights/insight",
 };
 
 const defaultArticles: ArticleCardProps[] = [
   {
-    image: "/images/news-wealth-creation.jpg",
+    image: "/images/track_record.webp",
     category: "Wealth Creation for HNWIs",
     excerpt:
       "How a disciplined, multi-asset approach helped a high-net-worth client grow and protect their portfolio.",
@@ -37,7 +37,7 @@ const defaultArticles: ArticleCardProps[] = [
     href: "/insights/news",
   },
   {
-    image: "/images/news-wealth-creation-2.jpg",
+    image: "/images/record.jpg",
     category: "Structuring a Multi-Generational Trust",
     excerpt: "Building a trust structure designed to preserve and transfer wealth across generations.",
     date: "02/10/2025",
@@ -45,7 +45,7 @@ const defaultArticles: ArticleCardProps[] = [
     href: "/insights/news",
   },
   {
-    image: "/images/news-nigerian-opportunities.jpg",
+    image: "/images/news1.webp",
     category: "Nigerian Investment Opportunities",
     excerpt: "Where we see the strongest risk-adjusted opportunities across the Nigerian market.",
     date: "02/10/2025",
@@ -56,7 +56,7 @@ const defaultArticles: ArticleCardProps[] = [
 
 export function CaseStudies({
   title = "Case Studies",
-  description = "Real examples of how our investment strategies have delivered measurable results for clients across different sectors and portfolio sizes.",
+  description = "Give slipstream product dogpile problem stakeholder build hammer today low-hanging believe encourage disband price not idea barn meat tent asserts spaces panel horse users moving eow waste in diarize light.",
   highlight = defaultHighlight,
   featured = defaultFeatured,
   articles = defaultArticles,

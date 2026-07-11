@@ -13,7 +13,7 @@ export function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="rounded-2xl bg-paper-soft p-2 sm:p-8">
+    <form onSubmit={handleSubmit} className="rounded-2xl bg-gray-50 p-2 sm:p-8">
       <div className="flex flex-col gap-5">
         <Field label="Name" required>
           <input
@@ -85,7 +85,7 @@ export function ContactForm() {
 
         <button
           type="submit"
-          className="mt-2 w-full rounded-lg bg-ink py-3.5 text-sm font-medium text-paper transition-colors hover:bg-ink-soft"
+          className="mt-2 w-full rounded-full bg-ink py-3.5 text-sm font-medium text-paper transition-colors hover:bg-ink-soft"
         >
           Schedule a Consultation
         </button>

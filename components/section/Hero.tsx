@@ -107,7 +107,7 @@ export function Hero({
           {eyebrow && (
             <motion.span
               variants={item}
-              className="text-xs font-semibold uppercase tracking-[0.2em] text-flame"
+              className="text-xs font-semibold uppercase tracking-[0.2em] text-gray-200 mb-12"
             >
               {eyebrow}
             </motion.span>
@@ -115,7 +115,7 @@ export function Hero({
 
           <motion.h1
             variants={item}
-            className="font-display text-4xl font-semibold leading-[1.08] tracking-tight sm:text-3xl lg:text-5xl"
+            className={`font-display text-4xl font-semibold leading-[1.08] tracking-tight sm:text-3xl lg:text-5xl`}
           >
             {title}
           </motion.h1>

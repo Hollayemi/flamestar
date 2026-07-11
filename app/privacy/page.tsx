@@ -78,7 +78,9 @@ export default function PrivacyPolicyPage() {
       <Hero
         title="Partner with a company that prioritizes capital preservation and strategic growth."
         primaryCta={{ label: "Invest Now", href: "/contact" }}
+        backgroundImage="/images/cta.webp"
         size="compact"
+        align="center"
         className="my-16 lg:my-20"
       />
     </HomeWrapper>

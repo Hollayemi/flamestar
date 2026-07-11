@@ -25,8 +25,8 @@ export function HelpOptions({
         {title}
       </h2>
 
-      <div className="mt-10 rounded-2xl border border-black/8 bg-paper p-8">
-        <span className="inline-block rounded-full bg-flame px-4 py-1.5 font-mono text-[10px] font-medium uppercase tracking-[0.14em] text-paper">
+      <div className="mt-10 rounded-2xl border relative border-black/8 bg-paper p-8">
+        <span className="inline-block absolute -top-[14px] mx-auto rounded-full bg-flame px-4 py-1.5 font-mono text-[10px] font-medium uppercase tracking-[0.14em] text-paper">
           {badge}
         </span>
 

@@ -18,7 +18,7 @@ export function TrackRecordOverview({
   heading = "Overview",
   description = "Our portfolio reflects a balanced mix of income-generating and growth-oriented assets.",
   points = defaultPoints,
-  cta = { label: "Performance Chart", href: "#performance-charts" },
+  cta,
   className = "",
 }: TrackRecordOverviewProps) {
   return (
@@ -41,14 +41,16 @@ export function TrackRecordOverview({
         </div>
       </div>
 
-      <div className="mt-14 flex justify-center">
-        <Link
-          href={cta.href}
-          className="rounded-full border border-black/10 bg-paper px-4 py-1.5 font-mono text-[10px] font-medium uppercase tracking-[0.16em] text-ink/70 transition-colors hover:border-black/25"
-        >
-          {cta.label}
-        </Link>
-      </div>
+      {cta && (
+        <div className="mt-14 flex justify-center">
+          <Link
+            href={cta.href}
+            className="rounded-full border border-black/10 bg-paper px-4 py-1.5 font-mono text-[10px] font-medium uppercase tracking-[0.16em] text-ink/70 transition-colors hover:border-black/25"
+          >
+            {cta.label}
+          </Link>
+        </div>
+      )}
     </section>
   );
 }

@@ -5,6 +5,7 @@ import { AboutIntro } from "@/components/section/about/AboutIntro";
 import { MissionVision } from "@/components/section/about/MissionVision";
 import { TeamCarousel } from "@/components/section/about/TeamCarousel";
 import { Recognition } from "@/components/section/about/Recognition";
+import { TrustSignals } from "@/components/ui/TrustSignals";
 
 const leadershipTeam: TeamMember[] = [
   { name: "Randy Theophilus", role: "Chairman, Flamestar Capital", photo: "/images/user1.png" },
@@ -68,9 +69,19 @@ export default function AboutPage() {
       <Hero
         title="Partner with a company that prioritizes capital preservation and strategic growth."
         primaryCta={{ label: "Invest Now", href: "/contact" }}
+        backgroundImage="/images/cta.webp"
+        align="center"
         size="compact"
         className="my-16 lg:my-20"
       />
+
+      <TrustSignals
+              signals={[
+                { label: "Registered & Regulated by SEC Nigeria", image: "/images/sec.png" },
+                { label: "Transparent reporting" },
+                { label: "Risk-managed investment approach" },
+              ]}
+            />
     </HomeWrapper>
   );
 }

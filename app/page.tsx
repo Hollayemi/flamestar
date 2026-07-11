@@ -6,6 +6,7 @@ import { Pillars } from "@/components/section/Pillars";
 import { Solutions } from "@/components/section/Solutions";
 import { TrackRecord } from "@/components/section/TrackRecord";
 import { Leadership } from "@/components/section/Leadership";
+import { TrustSignals } from "@/components/ui/TrustSignals";
 
 export default function Home() {
   return (
@@ -50,8 +51,17 @@ export default function Home() {
         title="Partner with a company that prioritizes capital preservation and strategic growth."
         primaryCta={{ label: "Invest Now", href: "/contact" }}
         size="compact"
+        align="center"
+        backgroundImage="/images/cta.webp"
         className="mx-6 my-20 lg:mx-10"
       />
+      <TrustSignals
+              signals={[
+                { label: "Registered & Regulated by SEC Nigeria", image: "/images/sec.png" },
+                { label: "Transparent reporting" },
+                { label: "Risk-managed investment approach" },
+              ]}
+            />
     </HomeWrapper>
   );
 }

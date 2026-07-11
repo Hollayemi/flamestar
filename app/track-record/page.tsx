@@ -1,9 +1,9 @@
+import { Award } from "lucide-react";
 import { HomeWrapper } from "@/components/wrapper";
 import { Hero } from "@/components/section/Hero";
 import { TrackRecordOverview } from "@/components/section/track_record/TrackRecordOverview";
-import { PerformanceCharts } from "@/components/section/track_record/PerformanceCharts";
 import { CaseStudies } from "@/components/section/track_record/CaseStudies";
-import { DiscussionShowcase } from "@/components/section/track_record/DiscussionShowcase";
+import { TrustSignals } from "@/components/ui/TrustSignals";
 
 export default function TrackRecordPage() {
   return (
@@ -17,9 +17,15 @@ export default function TrackRecordPage() {
       />
 
       <TrackRecordOverview />
-      <PerformanceCharts />
       <CaseStudies />
-      <DiscussionShowcase />
+
+      <TrustSignals
+        signals={[
+          { label: "Registered & Regulated by SEC Nigeria", image: "/images/sec.png" },
+          { label: "Transparent reporting" },
+          { label: "Risk-managed investment approach" },
+        ]}
+      />
 
       <Hero
         title="Partner with a company that prioritizes capital preservation and strategic growth."

@@ -3,6 +3,7 @@ import { Hero } from "@/components/section/Hero";
 import { Pillars } from "@/components/section/our_fund/Pillars";
 import { StrategyShowcase } from "@/components/section/our_fund/StrategyShowcase";
 import { CEOQuote } from "@/components/ui/CEOQuote";
+import { TrustSignals } from "@/components/ui/TrustSignals";
 
 const assetClasses = [
   {
@@ -49,15 +50,24 @@ export default function OurFundsPage() {
         quote="Driving strategic growth and investment excellence at Flamestar Capital."
         name="Yahaya Blessing"
         title="Chief Executive Officer"
-        photo="/images/ceo-portrait.jpg"
+        photo="/images/ceo-portrait.png"
       />
 
       <Hero
         title="Partner with a company that prioritizes capital preservation and strategic growth."
         primaryCta={{ label: "Invest Now", href: "/contact" }}
+        backgroundImage="/images/cta.webp"
         size="compact"
+        align="center"
         className="my-16 lg:my-20"
       />
+      <TrustSignals
+              signals={[
+                { label: "Registered & Regulated by SEC Nigeria", image: "/images/sec.png" },
+                { label: "Transparent reporting" },
+                { label: "Risk-managed investment approach" },
+              ]}
+            />
     </HomeWrapper>
   );
 }

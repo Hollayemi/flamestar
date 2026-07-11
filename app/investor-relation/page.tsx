@@ -3,6 +3,7 @@ import { Hero } from "@/components/section/Hero";
 import { Pillars } from "@/components/section/investor-relation/Pillars";
 import { InvestorResources } from "@/components/section/investor-relation/InvestorResources";
 import { OnboardingProcess } from "@/components/section/investor-relation/OnboardingProcess";
+import { TrustSignals } from "@/components/ui/TrustSignals";
 
 const investorBenefits = [
   {
@@ -31,7 +32,7 @@ export default function InvestorRelationsPage() {
       <Hero
         eyebrow="Investor Relations"
         title="Transparency. Trust. Performance."
-        backgroundImage="/images/investor-relations-hero.jpg"
+        backgroundImage="/images/investor-relation.webp"
         size="tall"
         className="mt-4 lg:mt-2"
       />
@@ -49,8 +50,17 @@ export default function InvestorRelationsPage() {
       <Hero
         title="Partner with a company that prioritizes capital preservation and strategic growth."
         primaryCta={{ label: "Invest Now", href: "/contact" }}
+        backgroundImage="/images/cta.webp"
         size="compact"
+        align="center"
         className="my-16 lg:my-20"
+      />
+      <TrustSignals
+        signals={[
+          { label: "Registered & Regulated by SEC Nigeria", image: "/images/sec.png" },
+          { label: "Transparent reporting" },
+          { label: "Risk-managed investment approach" },
+        ]}
       />
     </HomeWrapper>
   );

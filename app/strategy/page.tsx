@@ -5,6 +5,7 @@ import { PhilosophyDetails } from "@/components/section/strategy/PhilosophyDetai
 import { RiskManagement } from "@/components/section/strategy/RiskManagement";
 import { ArticleGrid } from "@/components/section/strategy/ArticleGrid";
 import { InsightsIntro } from "@/components/section/insight/InsightsIntro";
+import { TrustSignals } from "@/components/ui/TrustSignals";
 
 const otherArticles: ArticleCardProps[] = [
   {
@@ -63,9 +64,19 @@ export default function StrategyPage() {
       <Hero
         title="Partner with a company that prioritizes capital preservation and strategic growth."
         primaryCta={{ label: "Invest Now", href: "/contact" }}
+        backgroundImage="/images/cta.webp"
         size="compact"
+        align="center"
         className="my-16 lg:my-20"
       />
+
+      <TrustSignals
+              signals={[
+                { label: "Registered & Regulated by SEC Nigeria", image: "/images/sec.png" },
+                { label: "Transparent reporting" },
+                { label: "Risk-managed investment approach" },
+              ]}
+            />
     </HomeWrapper>
   );
 }

@@ -15,23 +15,21 @@ export const primaryNav: NavItem[] = [
     label: "Our Firm",
     items: [
       { label: "About Us", href: "/about", description: "Info about our firm and what drives us" },
-      { label: "Track Record", href: "/about/team", description: "Our Impact and what makes us special to investors" },
+      { label: "Track Record", href: "/track-record", description: "Our Impact and what makes us special to investors" },
     ],
   },
   {
     label: "Strategies",
     items: [
-      { label: "Fixed Income", href: "/strategies/fixed-income", description: "Capital preservation, steady yield" },
-      { label: "Equities", href: "/strategies/equities", description: "Long-term growth across markets" },
-      { label: "Alternative Investments", href: "/strategies/alternatives", description: "Diversified, uncorrelated returns" },
+      { label: "Our Funds", href: "/our-fund", description: "Analytical framework guiding our capital decisions" },
+      { label: "Investment Strategy", href: "/strategy", description: "Institutional-grade vehicles built for strategic growth" },
     ],
   },
   {
     label: "Insights",
     items: [
-      { label: "Market Reports", href: "/insights/reports", description: "In-depth analysis, quarterly" },
-      { label: "News", href: "/insights/news", description: "Announcements and firm updates" },
-      { label: "Newsletter", href: "/insights/newsletter", description: "Curated insights in your inbox" },
+      { label: "Market Insight", href: "/market-insights", description: "Macroeconomic analysis and proprietary research" },
+      { label: "Investor Relation", href: "/investor-relation", description: "Portfolio reporting, resources, and onboarding portals" },
     ],
   },
   {
@@ -43,7 +41,7 @@ export const primaryNav: NavItem[] = [
 export const footerLinks: NavLink[] = [
   { label: "About Us", href: "/about" },
   { label: "Services", href: "/services" },
-  { label: "Investment Strategy", href: "/strategies" },
+  { label: "Investment Strategy", href: "/strategy" },
   { label: "Contact Us", href: "/contact" },
   { label: "Terms & Conditions", href: "/terms" },
   { label: "Privacy Policy", href: "/privacy" },
