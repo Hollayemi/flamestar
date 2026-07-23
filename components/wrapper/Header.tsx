@@ -34,7 +34,7 @@ export function Header() {
         : "bg-transparent border-b border-transparent"
         }`}
     >
-      <div className="mx-auto flex h-[4.5rem] max-w-7xl items-center justify-between px-6 py-4">
+      <div className="mx-auto flex h-[4.5rem] max-w-7xl items-center justify-between px-6 md:px-0 py-4">
         <div className="flex items-center gap-6">
           <Link href="/" className="flex items-center gap-2.5" onClick={() => setMobileOpen(false)}>
             <Image src="/images/logo.png" alt="logo" className="w-40" width={900} height={900} />
