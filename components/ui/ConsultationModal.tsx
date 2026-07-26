@@ -43,7 +43,7 @@ export function ConsultationModal() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.18 }}
-          className="fixed inset-0 z-[100] flex items-center overflow-hidden justify-center overflow-y-auto bg-ink/50 px-4  backdrop-blur-sm sm:px-6"
+          className="fixed inset-0 z-100 flex items-center overflow-hidden justify-center overflow-y-auto bg-ink/50 px-4  backdrop-blur-sm sm:px-6"
           onClick={close}
         >
           <motion.div

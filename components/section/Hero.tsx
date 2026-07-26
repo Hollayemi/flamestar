@@ -89,7 +89,7 @@ export function Hero({
               sizes="100vw"
               className="object-cover object-top"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/45 to-ink/10" />
+            <div className="absolute inset-0 bg-linear-to-t from-ink via-ink/45 to-ink/10" />
           </>
         ) : (
           <DotMap tone={tone} />
@@ -208,7 +208,7 @@ export function CallToAction({ className }: CallToActionProps) {
   return (
     <div className={`mx-auto md:px-4 ${className}`}>
       <section
-        className={`relative flex overflow-hidden md:rounded-3xl bg-ink text-paper items-center min-h-[360px] py-14`}
+        className={`relative flex overflow-hidden md:rounded-3xl bg-ink text-paper items-center min-h-90 py-14`}
       >
         <Image
           src={"/images/cta.webp"}
@@ -218,7 +218,7 @@ export function CallToAction({ className }: CallToActionProps) {
           sizes="100vw"
           className="object-cover object-top"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/45 to-ink/10" />
+        <div className="absolute inset-0 bg-linear-to-t from-ink via-ink/45 to-ink/10" />
         <motion.div
           variants={container}
           initial="hidden"

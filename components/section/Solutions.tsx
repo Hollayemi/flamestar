@@ -108,7 +108,7 @@ export function Solutions({
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
           >
             {solutions.map((solution) => (
-              <div key={solution.title} className="w-full flex-shrink-0 px-2">
+              <div key={solution.title} className="w-full shrink-0 px-2">
                 <SolutionCard {...solution} />
               </div>
             ))}

@@ -97,7 +97,7 @@ export function Pillars({
     <section className={`relative overflow-hidden ${className}`}>
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 top-0 h-[360px] w-[700px] -translate-x-1/2 translate-y-4/5 rounded-full bg-flame/7 blur-[120px]"
+        className="pointer-events-none absolute left-1/2 top-0 h-90 w-175 -translate-x-1/2 translate-y-4/5 rounded-full bg-flame/7 blur-[120px]"
       />
       <div className="relative mx-auto max-w-6xl px-6 py-20 lg:px-10 lg:py-28">
         <div className="flex flex-col items-center text-center">
@@ -132,7 +132,7 @@ export function Pillars({
               style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
               {allPillars.map((pillar) => (
-                <div key={pillar.number} className="w-full flex-shrink-0 px-2">
+                <div key={pillar.number} className="w-full shrink-0 px-2">
                   <PillarCard {...pillar} />
                 </div>
               ))}
