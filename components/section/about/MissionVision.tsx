@@ -11,10 +11,10 @@ export type MissionVisionProps = {
 
 export function MissionVision({
   missionLabel = "Our Mission",
-  mission = "To empower clients with smart, data-driven investment solutions that create sustainable wealth.",
+  mission = "To empower our clients with intelligent, data-driven investment solutions that build and protect sustainable wealth.",
   image = "/images/our-office.jpg",
   visionLabel = "Our Vision",
-  vision = "To become a leading investment management firm in Africa, recognized for performance, integrity, and innovation.",
+  vision = "To become one of Africa's most trusted investment management firms, recognized for integrity, performance, and innovation.",
   className = "",
 }: MissionVisionProps) {
   return (

@@ -9,7 +9,7 @@ export type RiskManagementProps = {
 
 export function RiskManagement({
   title = "Risk Management",
-  description = "A proactive, institutional-grade oversight system engineered to identify and mitigate market volatility through continuous, data-driven monitoring. The institutional-grade risk controls we employ includes the following:",
+  description = "A proactive, institutional grade oversight system engineered to identify and mitigate market volatility through continuous, data driven monitoring, including portfolio diversification, ongoing market analysis, and continuous position monitoring.",
   items = ["Portfolio diversification", "Market analysis", "Continuous monitoring"],
   className = "",
 }: RiskManagementProps) {

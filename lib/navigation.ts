@@ -50,7 +50,7 @@ export const footerLinks: NavLink[] = [
 export const companyInfo = {
   name: "Flamestar Capital Ltd",
   addressLines: ["9A Oki Lane, Mende,", "Maryland, Lagos State"],
-  phone: "(801) 123 456 1289",
+  phone: "08122220683",
 };
 
 export const socialLinks = [

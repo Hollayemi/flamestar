@@ -10,7 +10,7 @@ export function HomeWrapper({ children }: HomeWrapperProps) {
   return (
     <div className="flex bg-white min-h-full flex-col">
       <Header />
-      <main className="flex-1">{children}</main>
+      <main className="flex-1 md:px-10">{children}</main>
       <Footer />
     </div>
   );

@@ -8,7 +8,7 @@
   --color-ink: #0b0d10;
   --color-ink-soft: #14181d;
   --color-paper: #ffffff;
-  --color-paper-soft: #ffffff;
+  --color-paper-soft: #FFFFFC;
   --color-flame: #e1432e;
   --color-flame-deep: #b52d1c;
   --color-signal: #1449e0;
@@ -32,9 +32,9 @@
   --color-muted-dark: var(--color-muted-dark);
   --color-muted-light: var(--color-muted-light);
 
-  --font-sans: var(--font-inter);
-  --font-display: var(--font-space-grotesk);
-  --font-mono: var(--font-plex-mono);
+  --font-sans: var(--font-geist);
+  --font-display: var(--font-geist);
+  --font-mono: var(--font-geist-mono);
 }
 
 body {

@@ -6,11 +6,15 @@ import type { ReactNode } from "react";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { DotMap } from "@/components/ui/DotMap";
+import { useConsultation } from "@/lib/consultation-context";
 
 export type HeroCta = {
   label: string;
   href: string;
+  action?: any 
 };
+
+// ============ HERO COMPONENT ============
 
 export type HeroProps = {
   /** Small label above the title, e.g. "About Us" */
@@ -31,7 +35,7 @@ export type HeroProps = {
   className?: string;
 };
 
-const sizeClasses: Record<NonNullable<HeroProps["size"]>, string> = {
+const heroSizeClasses: Record<NonNullable<HeroProps["size"]>, string> = {
   tall: "min-h-[560px] lg:min-h-[620px] py-14 lg:py-16",
   compact: "min-h-[360px] py-14",
 };
@@ -51,7 +55,6 @@ export function Hero({
 }: HeroProps) {
   const prefersReducedMotion = useReducedMotion();
   const isImage = Boolean(backgroundImage);
-  // Image heroes read naturally as bottom-left; dot-map heroes default to centered.
   const isCentered = align ? align === "center" : !isImage;
 
   const container: Variants = {
@@ -71,11 +74,10 @@ export function Hero({
   };
 
   return (
-    <div className={`mx-auto md:px-4 ${className}`}>
+    <div className={`mx-auto ${className}`}>
       <section
-        className={`relative flex overflow-hidden md:rounded-3xl bg-ink text-paper ${
-          isImage ? "items-end" : "items-center"
-        } ${sizeClasses[size]}`}
+        className={`relative flex overflow-hidden md:rounded-3xl bg-ink text-paper ${isImage ? "items-end" : "items-center"
+          } ${heroSizeClasses[size]}`}
       >
         {isImage ? (
           <>
@@ -98,11 +100,10 @@ export function Hero({
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.4 }}
-          className={`relative z-10 flex w-full flex-col gap-5 px-8 pb-12 pt-8 sm:px-10 lg:px-14 lg:pb-14 ${
-            isCentered
-              ? "mx-auto max-w-5xl items-center text-center"
-              : "max-w-3xl items-start text-left"
-          }`}
+          className={`relative z-10 flex w-full flex-col gap-5 px-8 pb-12 pt-8 sm:px-14 lg:px-20 lg:pb-14 ${isCentered
+            ? "mx-auto max-w-5xl items-center text-center"
+            : "max-w-3xl items-start text-left"
+            }`}
         >
           {eyebrow && (
             <motion.span
@@ -129,20 +130,32 @@ export function Hero({
           {(primaryCta || secondaryCta) && (
             <motion.div
               variants={item}
-              className={`mt-2 flex flex-wrap items-center gap-x-6 gap-y-3 ${
-                isCentered ? "justify-center" : "justify-start"
-              }`}
+              className={`mt-2 flex flex-wrap items-center gap-x-6 gap-y-3 ${isCentered ? "justify-center" : "justify-start"
+                }`}
             >
               {primaryCta && (
-                <Link
-                  href={primaryCta.href}
-                  className="group inline-flex items-center gap-2 rounded-full bg-paper px-6 py-3 font-mono text-xs font-medium uppercase tracking-widest text-ink transition-colors hover:bg-paper-soft"
-                >
-                  {primaryCta.label}
-                  {isImage && (
-                    <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
-                  )}
-                </Link>
+                primaryCta.action ? (
+                  <button
+                    type="button"
+                    onClick={primaryCta.action}
+                    className="group inline-flex items-center gap-2 rounded-full bg-paper px-6 py-3 font-mono text-xs font-medium uppercase tracking-widest text-ink transition-colors hover:bg-paper-soft"
+                  >
+                    {primaryCta.label}
+                    {isImage && (
+                      <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+                    )}
+                  </button>
+                ) : (
+                  <Link
+                    href={primaryCta.href}
+                    className="group inline-flex items-center gap-2 rounded-full bg-paper px-6 py-3 font-mono text-xs font-medium uppercase tracking-widest text-ink transition-colors hover:bg-paper-soft"
+                  >
+                    {primaryCta.label}
+                    {isImage && (
+                      <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+                    )}
+                  </Link>
+                )
               )}
               {secondaryCta && (
                 <Link
@@ -166,3 +179,75 @@ export function Hero({
   );
 }
 
+// ============ CALL TO ACTION COMPONENT ============
+
+export type CallToActionProps = { className?: string };
+
+
+
+export function CallToAction({ className }: CallToActionProps) {
+  const prefersReducedMotion = useReducedMotion();
+  const { open } = useConsultation();
+
+  const container: Variants = {
+    hidden: {},
+    show: {
+      transition: { staggerChildren: prefersReducedMotion ? 0 : 0.12 },
+    },
+  };
+
+  const item: Variants = {
+    hidden: { opacity: 0, y: prefersReducedMotion ? 0 : 18 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
+  };
+
+  return (
+    <div className={`mx-auto md:px-4 ${className}`}>
+      <section
+        className={`relative flex overflow-hidden md:rounded-3xl bg-ink text-paper items-center min-h-[360px] py-14`}
+      >
+        <Image
+          src={"/images/cta.webp"}
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-top"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/45 to-ink/10" />
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.4 }}
+          className={`relative z-10 flex w-full flex-col gap-4 px-8 pb-12 pt-8 sm:px-14 lg:px-20 lg:pb-14 mx-auto max-w-4xl items-center text-center `}
+        >
+          <motion.h2
+            variants={item}
+            className={`font-display text-3xl font-semibold leading-[1.08] tracking-tight sm:text-4xl lg:text-5xl`}
+          >
+            Partner with a company that prioritizes capital preservation and strategic growth.
+          </motion.h2>
+
+
+          <motion.div
+            variants={item}
+            className={`mt-2 flex flex-wrap items-center gap-x-6 gap-y-3 justify-center `}
+          >
+            <button
+              onClick={open}
+              className="group inline-flex items-center gap-2 rounded-full bg-paper px-6 py-3 font-mono text-xs font-medium uppercase tracking-widest text-ink transition-colors hover:bg-paper-soft"
+            >
+              Schedule Consultation
+              <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+            </button>
+          </motion.div>
+        </motion.div>
+      </section>
+    </div>
+  );
+}

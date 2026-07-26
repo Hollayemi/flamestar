@@ -1,21 +1,23 @@
 "use client"
 
 import { HomeWrapper } from "@/components/wrapper";
-import { Hero } from "@/components/section/Hero";
+import { Hero, CallToAction } from "@/components/section/Hero";
 import { Pillars } from "@/components/section/Pillars";
 import { Solutions } from "@/components/section/Solutions";
-import { TrackRecord } from "@/components/section/TrackRecord";
 import { Leadership } from "@/components/section/Leadership";
 import { TrustSignals } from "@/components/ui/TrustSignals";
+import { useConsultation } from "@/lib/consultation-context";
+import { TrackFoundation } from "@/components/section/TrackFoundation";
+import { TrustFeatures } from "@/components/section/TrustFeatures";
 
 export default function Home() {
+  const { open } = useConsultation()
   return (
     <HomeWrapper>
       <Hero
-        eyebrow="Flamestar Capital"
-        title="Empowering your financial future through strategic asset management."
-        description="We provide disciplined, data-driven investment strategies across fixed income, equities, and alternative investments designed to preserve capital and deliver consistent returns."
-        primaryCta={{ label: "Invest With Us", href: "/contact" }}
+        title="Empowering Your Financial Future Through Strategic Investment Management"
+        description="Flamestar Capital is an SEC registered and regulated investment management firm built on transparency, discipline, and fiduciary care. We design considered strategies across fixed income, equities, and alternative investments to help you preserve capital and pursue consistent, long term growth."
+        primaryCta={{ label: "SCHEDULE A CONSULTATION", href: "/contact", action: open }}
         secondaryCta={{ label: "Download Investor Brochure", href: "/brochure.pdf" }}
         backgroundImage="/images/bg.png"
         size="tall"
@@ -43,25 +45,21 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      <TrustFeatures />
+
       <Pillars />
       <Solutions />
-      <TrackRecord />
+      <TrackFoundation />
       <Leadership />
-      <Hero
-        title="Partner with a company that prioritizes capital preservation and strategic growth."
-        primaryCta={{ label: "Invest Now", href: "/contact" }}
-        size="compact"
-        align="center"
-        backgroundImage="/images/cta.webp"
-        className="mx-6 my-20 lg:mx-10"
-      />
+      <CallToAction className="my-16 lg:my-20" />
       <TrustSignals
-              signals={[
-                { label: "Registered & Regulated by SEC Nigeria", image: "/images/sec.png" },
-                { label: "Transparent reporting" },
-                { label: "Risk-managed investment approach" },
-              ]}
-            />
+        signals={[
+          { label: "Registered & Regulated by SEC Nigeria", image: "/images/sec.png" },
+          { label: "Transparent reporting" },
+          { label: "Risk-managed investment approach" },
+        ]}
+      />
     </HomeWrapper>
   );
 }

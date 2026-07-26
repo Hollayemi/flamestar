@@ -1,11 +1,13 @@
 "use client";
 
+import Link from "next/link";
 import { useState, type FormEvent } from "react";
 
 const MESSAGE_LIMIT = 200;
 
 export function ContactForm() {
   const [message, setMessage] = useState("");
+  const [agreed, setAgreed] = useState(false);
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -82,7 +84,24 @@ export function ContactForm() {
             className="w-full rounded-lg border border-black/10 bg-paper px-4 py-3 text-sm text-ink placeholder:text-muted-light focus:border-ink/30 focus:outline-none"
           />
         </Field>
-
+        <label className="flex items-start gap-3 text-sm text-ink">
+          <input
+            type="checkbox"
+            name="agree"
+            required
+            checked={agreed}
+            onChange={(event) => setAgreed(event.target.checked)}
+            className="mt-0.5 h-4 w-4 shrink-0 rounded border-black/20 text-ink focus:ring-ink/30"
+          />
+          <span className="leading-relaxed text-muted-light">
+            I agree that Flamestar Capital may contact me about my enquiry. I have read and
+            accepted the{" "}
+            <Link href="/privacy" className="text-ink underline underline-offset-2">
+              Privacy Policy
+            </Link>
+            .
+          </span>
+        </label> 
         <button
           type="submit"
           className="mt-2 w-full rounded-full bg-ink py-3.5 text-sm font-medium text-paper transition-colors hover:bg-ink-soft"

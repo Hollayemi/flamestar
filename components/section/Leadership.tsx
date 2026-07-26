@@ -23,7 +23,7 @@ export type LeadershipProps = {
 const defaultQuote: LeadershipQuote = {
   photo: "/images/ceo-portrait.png",
   quote:
-    "Vision-driven investment professional with a track record of building scalable financial platforms and delivering strong portfolio performance.",
+    "We founded Flamestar Capital on a simple conviction that investors deserve a manager who is disciplined in method, transparent in practice, and unwavering in putting their interests first. That is the standard we hold ourselves to every day.",
   name: "Yahaya Blessing",
   title: "CEO Flamestar Capital",
 };
@@ -31,27 +31,27 @@ const defaultQuote: LeadershipQuote = {
 const defaultArticles: ArticleCardProps[] = [
   {
     image: "/images/news1.webp",
-    category: "Wealth creation",
-    excerpt: "A look at how disciplined capital allocation compounds into lasting wealth over time.",
+    category: "Building Wealth with Discipline: Why Process Beats Prediction",
+    excerpt: "Markets are unpredictable; a good process is not. Here is why we trust discipline over forecasts.",
     date: "02/10/2025",
     readTime: "3 mins read",
-    href: "/insights/news",
+    href: "/market-insights/insight",
   },
   {
     image: "/images/news1.webp",
-    category: "Nigerian investment opportunities",
-    excerpt: "Where we see the strongest risk-adjusted opportunities across the Nigerian market.",
+    category: "The Nigerian Investment Landscape: Where We See Opportunity",
+    excerpt: "A grounded look at the risks and opportunities shaping Nigerian markets today.",
     date: "02/10/2025",
     readTime: "3 mins read",
-    href: "/insights/news",
+    href: "/market-insights/insight",
   },
   {
     image: "/images/news1.webp",
-    category: "Market Outlook",
-    excerpt: "Our latest read on rates, liquidity, and positioning across the quarter ahead.",
+    category: "Understanding Risk: How We Protect Your Capital",
+    excerpt: "Return matters - but not before risk. A plain language look at how we manage it.",
     date: "02/10/2025",
     readTime: "3 mins read",
-    href: "/insights/news",
+    href: "/market-insights/insight",
   },
 ];
 
@@ -115,7 +115,7 @@ export function Leadership({
 
       <div className="mt-14 flex justify-center">
         <Link
-          href="/insights/news"
+          href="/market-insights"
           className="group inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper transition-colors hover:bg-ink-soft"
         >
           View All Articles

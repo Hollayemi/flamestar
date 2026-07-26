@@ -14,31 +14,31 @@ const defaultPillars: PillarCardProps[] = [
     number: "01",
     title: "Integrity",
     description:
-      "Maintaining an uncompromising ethical standard and moral clarity in every engagement to ensure your interests always come first.",
+      "We hold to an uncompromising ethical standard. In every engagement, your interests come first clearly, consistently, and without exception.",
   },
   {
     number: "02",
     title: "Discipline",
     description:
-      "Applying a clinical, data-driven approach to every investment decision, remaining steadfast in our commitment to rigorous risk management.",
+      "We apply a clinical, data-driven approach to every decision, grounded in rigorous research and steadfast risk management.",
   },
   {
     number: "03",
     title: "Excellence",
     description:
-      "Pursuing intellectual and operational perfection to deliver sophisticated strategies that exceed industry benchmarks and client expectations.",
+      "We pursue the highest standard in everything we do, delivering sophisticated strategies executed with precision and care.",
   },
   {
     number: "04",
     title: "Transparency",
     description:
-      "Providing high-fidelity reporting and honest market assessments to ensure complete alignment and clarity in our partnership.",
+      "We communicate openly and report honestly on performance, on risk, and on cost, so you always know exactly where you stand.",
   },
   {
     number: "05",
     title: "Client-Centricity",
     description:
-      "Operating as a dedicated fiduciary where every solution is bespoke and engineered specifically to meet your unique financial objectives.",
+      "We operate as a dedicated fiduciary. Every strategy is engineered around your specific objectives, never a one-size-fits-all product.",
   },
 ];
 

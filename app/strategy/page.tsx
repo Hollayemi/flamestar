@@ -1,6 +1,6 @@
 import type { ArticleCardProps } from "@/components/ui/ArticleCard";
 import { HomeWrapper } from "@/components/wrapper";
-import { Hero } from "@/components/section/Hero";
+import { Hero, CallToAction } from "@/components/section/Hero";
 import { PhilosophyDetails } from "@/components/section/strategy/PhilosophyDetails";
 import { RiskManagement } from "@/components/section/strategy/RiskManagement";
 import { ArticleGrid } from "@/components/section/strategy/ArticleGrid";
@@ -9,29 +9,29 @@ import { TrustSignals } from "@/components/ui/TrustSignals";
 
 const otherArticles: ArticleCardProps[] = [
   {
-    image: "/images/news1.webp",
+    image: "/images/record.jpg",
     category: "Wealth creation",
     excerpt:
       "How a disciplined, multi-asset approach helps clients grow and protect long-term wealth.",
     date: "02/10/2025",
     readTime: "3 mins read",
-    href: "/insights/news",
+    href: "/market-insights/insight",
   },
   {
-    image: "/images/news-nigerian-opportunities.jpg",
+    image: "/images/image4.webp",
     category: "Nigerian investment opportunities",
     excerpt: "Where we see the strongest risk-adjusted opportunities across the Nigerian market.",
     date: "02/10/2025",
     readTime: "3 mins read",
-    href: "/insights/news",
+    href: "/market-insights/insight",
   },
   {
-    image: "/images/case-study-market-outlook.jpg",
+    image: "/images/record2.webp",
     category: "Market Outlook",
     excerpt: "Our latest read on rates, liquidity, and positioning across the quarter ahead.",
     date: "02/10/2025",
     readTime: "3 mins read",
-    href: "/insights/news",
+    href: "/market-insights/insight",
   },
 ];
 
@@ -49,7 +49,7 @@ export default function StrategyPage() {
       <InsightsIntro
         heading="Our Philosophy"
         paragraphs={[
-          "Our philosophy integrates high-fidelity market intelligence with institutional-grade risk management and clinical execution to ensure capital resilience and consistent performance across all market regimes. By synthesizing deep fundamental research with a steadfast adherence to risk-mitigation frameworks, we transform complex market data into a disciplined engine for long-term wealth appreciation.",
+          "Our philosophy integrates high quality market intelligence with institutional-grade risk management and disciplined execution to protect capital and pursue consistent performance across market cycles. By combining deep fundamental research with a steadfast commitment to risk mitigation, we turn complex market data into a clear, disciplined process for long-term wealth creation.",
         ]}
       />
 
@@ -61,22 +61,15 @@ export default function StrategyPage() {
         articles={otherArticles}
       />
 
-      <Hero
-        title="Partner with a company that prioritizes capital preservation and strategic growth."
-        primaryCta={{ label: "Invest Now", href: "/contact" }}
-        backgroundImage="/images/cta.webp"
-        size="compact"
-        align="center"
-        className="my-16 lg:my-20"
-      />
+      <CallToAction className="my-16 lg:my-20" />
 
       <TrustSignals
-              signals={[
-                { label: "Registered & Regulated by SEC Nigeria", image: "/images/sec.png" },
-                { label: "Transparent reporting" },
-                { label: "Risk-managed investment approach" },
-              ]}
-            />
+        signals={[
+          { label: "Registered & Regulated by SEC Nigeria", image: "/images/sec.png" },
+          { label: "Transparent reporting" },
+          { label: "Risk-managed investment approach" },
+        ]}
+      />
     </HomeWrapper>
   );
 }

@@ -11,16 +11,16 @@ export type CaseStudiesProps = {
 };
 
 const defaultHighlight: CaseStudyHighlightProps = {
-  title: "Chime here giant note wiggle manager switch cta.",
+  title: "A closer look at how we structure lasting portfolios.",
   description:
-    "Heads-up tomorrow create when functional quick three lunch lot moving cross done marginalised paradigm if hop picture globalize innovation let productive invite winning support.",
+    "See how disciplined, risk-adjusted allocation across fixed income, equities, and real estate has translated into measurable outcomes for our clients.",
   href: "/market-insights/insight",
 };
 
 const defaultFeatured: ArticleCardProps = {
-  image: "/images/news1.webp",
+  image: "/images/record2.webp",
   category: "Market Outlook",
-  excerpt: "Or loop territories container creep model anomalies mifflin going forward break finance.",
+  excerpt: "Our latest read on rates, liquidity, and positioning across the quarter ahead.",
   date: "02/10/2025",
   readTime: "3 mins read",
   href: "/market-insights/insight",
@@ -34,7 +34,7 @@ const defaultArticles: ArticleCardProps[] = [
       "How a disciplined, multi-asset approach helped a high-net-worth client grow and protect their portfolio.",
     date: "02/10/2025",
     readTime: "3 mins read",
-    href: "/insights/news",
+    href: "/market-insights/insight",
   },
   {
     image: "/images/record.jpg",
@@ -42,21 +42,21 @@ const defaultArticles: ArticleCardProps[] = [
     excerpt: "Building a trust structure designed to preserve and transfer wealth across generations.",
     date: "02/10/2025",
     readTime: "3 mins read",
-    href: "/insights/news",
+    href: "/market-insights/insight",
   },
   {
-    image: "/images/news1.webp",
+    image: "/images/image4.webp",
     category: "Nigerian Investment Opportunities",
     excerpt: "Where we see the strongest risk-adjusted opportunities across the Nigerian market.",
     date: "02/10/2025",
     readTime: "3 mins read",
-    href: "/insights/news",
+    href: "/market-insights/insight",
   },
 ];
 
 export function CaseStudies({
   title = "Case Studies",
-  description = "Give slipstream product dogpile problem stakeholder build hammer today low-hanging believe encourage disband price not idea barn meat tent asserts spaces panel horse users moving eow waste in diarize light.",
+  description = "A look at how our disciplined, risk-adjusted approach has played out for real clients across wealth creation, trust structuring, and market positioning.",
   highlight = defaultHighlight,
   featured = defaultFeatured,
   articles = defaultArticles,

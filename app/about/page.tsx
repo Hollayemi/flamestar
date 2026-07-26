@@ -1,32 +1,114 @@
 import type { TeamMember } from "@/components/ui/TeamMemberCard";
 import { HomeWrapper } from "@/components/wrapper";
-import { Hero } from "@/components/section/Hero";
+import { Hero, CallToAction } from "@/components/section/Hero";
 import { AboutIntro } from "@/components/section/about/AboutIntro";
 import { MissionVision } from "@/components/section/about/MissionVision";
 import { TeamCarousel } from "@/components/section/about/TeamCarousel";
-import { Recognition } from "@/components/section/about/Recognition";
 import { TrustSignals } from "@/components/ui/TrustSignals";
+import { TrustFeatureItem, TrustFeatures } from "@/components/section/TrustFeatures";
+import Image from "next/image";
+
 
 const leadershipTeam: TeamMember[] = [
-  { name: "Randy Theophilus", role: "Chairman, Flamestar Capital", photo: "/images/user1.png" },
-  { name: "Yetunde Rachael", role: "Head of Finance", photo: "/images/user2.png" },
-  { name: "Badmus Adebayo", role: "Head of Innovation", photo: "/images/user3.png" },
-  { name: "Mohammed Jimoh", role: "Head of Strategy", photo: "/images/user4.png" },
-  { name: "Favor Nonso", role: "Head of Operations", photo: "/images/user5.png" },
+  {
+    name: "Randy Theophilus",
+    role: "Chairman, Flamestar Capital",
+    photo: "/images/user1.png",
+    bio: "Randy sets the strategic direction for Flamestar Capital, drawing on two decades of experience across banking, private equity, and portfolio management. He is focused on building a firm that puts client outcomes and fiduciary duty above all else.",
+  },
+  {
+    name: "Yetunde Rachael",
+    role: "Head of Finance",
+    photo: "/images/user2.png",
+    bio: "Yetunde oversees Flamestar's financial operations and reporting, bringing rigorous financial controls and transparent reporting practices to every client mandate she touches.",
+  },
+  {
+    name: "Badmus Adebayo",
+    role: "Head of Innovation",
+    photo: "/images/user3.png",
+    bio: "Badmus leads Flamestar's technology and product innovation efforts, building the tools and infrastructure that keep the firm's investment process disciplined, data-driven, and scalable.",
+  },
+  {
+    name: "Mohammed Jimoh",
+    role: "Head of Strategy",
+    photo: "/images/user4.png",
+    bio: "Mohammed shapes Flamestar's investment strategy and asset allocation frameworks, translating macroeconomic research into portfolios built for long-term, risk-adjusted performance.",
+  },
+  {
+    name: "Favor Nonso",
+    role: "Head of Operations",
+    photo: "/images/user5.png",
+    bio: "Favor ensures Flamestar's day-to-day operations run smoothly and securely, so clients experience seamless service at every stage of their investment journey.",
+  },
 ];
 
 const engineroomTeam: TeamMember[] = [
-  { name: "Randy Theophilus", role: "R&D Manager", photo: "/images/user6.png" },
-  { name: "Yetunde Rachael", role: "Compliance Officer", photo: "/images/user5.png" },
-  { name: "Badmus Adebayo", role: "Product Manager", photo: "/images/user4.png" },
-  { name: "Mohammed Jimoh", role: "Engineer", photo: "/images/user3.png" },
-  { name: "Favor Nonso", role: "Designer", photo: "/images/user2.png" },
-  { name: "Dada Joshua", role: "Engineer", photo: "/images/user1.png" },
-  { name: "Anu Alabi", role: "Analyst", photo: "/images/user6.png" },
-  { name: "Gbenga Ahmed", role: "Support Lead", photo: "/images/user5.png" },
+  {
+    name: "Randy Theophilus",
+    role: "R&D Manager",
+    photo: "/images/user6.png",
+    bio: "Randy leads research and development for Flamestar's investment tools, testing new approaches to risk modeling and portfolio construction before they reach client accounts.",
+  },
+  {
+    name: "Yetunde Rachael",
+    role: "Compliance Officer",
+    photo: "/images/user5.png",
+    bio: "Yetunde keeps Flamestar aligned with SEC Nigeria's regulatory requirements, safeguarding the integrity of the firm's investment process and client reporting.",
+  },
+  {
+    name: "Badmus Adebayo",
+    role: "Product Manager",
+    photo: "/images/user4.png",
+    bio: "Badmus manages the roadmap for Flamestar's client-facing tools, working closely with the investment team to turn complex portfolio data into clear, actionable reporting.",
+  },
+  {
+    name: "Mohammed Jimoh",
+    role: "Engineer",
+    photo: "/images/user3.png",
+    bio: "Mohammed builds and maintains the systems that power Flamestar's portfolio monitoring and reporting infrastructure.",
+  },
+  {
+    name: "Favor Nonso",
+    role: "Designer",
+    photo: "/images/user2.png",
+    bio: "Favor shapes the way clients experience Flamestar's digital tools, designing clear, trustworthy interfaces for a complex financial product.",
+  },
+  {
+    name: "Dada Joshua",
+    role: "Engineer",
+    photo: "/images/user1.png",
+    bio: "Dada works across Flamestar's engineering stack, focused on the reliability and security of the systems clients depend on.",
+  },
+  {
+    name: "Anu Alabi",
+    role: "Analyst",
+    photo: "/images/user6.png",
+    bio: "Anu supports the investment team with data analysis and research, helping translate market signals into actionable portfolio insights.",
+  },
+  {
+    name: "Gbenga Ahmed",
+    role: "Support Lead",
+    photo: "/images/user5.png",
+    bio: "Gbenga leads client support at Flamestar, making sure every enquiry is met with clarity, care, and a fast response.",
+  },
 ];
 
+
 export default function AboutPage() {
+  const defaultItems: TrustFeatureItem[] = [
+    {
+      title: "SEC Regulated",
+      description: "Licensed by the Securities and Exchange Commission, Nigeria.",
+    },
+    {
+      title: "Three Asset Classes",
+      description: "Fixed income, equities, and alternative investments.",
+    },
+    {
+      title: "Fiduciary Standard",
+      description: "A duty of care written into everything we do",
+    },
+  ];
   return (
     <HomeWrapper>
       <Hero
@@ -40,6 +122,9 @@ export default function AboutPage() {
       />
 
       <AboutIntro />
+
+      <TrustFeatures items={defaultItems} />
+
       <MissionVision />
 
       <div className="mx-auto flex max-w-7xl justify-center px-6 pt-10 lg:px-10">
@@ -48,14 +133,14 @@ export default function AboutPage() {
         </span>
       </div>
 
-      <TeamCarousel
+        <TeamCarousel
         title="Leadership"
-        subtitle="Ownership is the job at every level"
+        subtitle="Experienced, accountable, and personally invested in your success."
         members={leadershipTeam}
         tone="signal"
         className="mt-10 py-10"
       />
-
+ 
       <TeamCarousel
         title="Engineroom"
         subtitle="The amazing people keeping the boat running and making our clients happy"
@@ -63,25 +148,29 @@ export default function AboutPage() {
         tone="flame"
         className="py-10"
       />
+ 
 
-      <Recognition className="border-t border-black/8" />
+      <section className={`mx-auto max-w-7xl px-6 py-20 lg:px-10`}>
+        <div className=" flex items-center justify-between">
+          <div>
+            <h2 className="font-display text-2xl font-semibold text-ink sm:text-3xl mb-4">Held to institutional standards</h2>
+            <p className="max-w-2xl text-sm leading-relaxed text-muted-light sm:text-base">
+              We operate to institutional standards of governance, compliance, and reporting. Flamestar Capital is registered and regulated by the Securities and Exchange Commission of Nigeria, and we maintain rigorous internal controls designed to protect our clients and their capital. As we grow, we will let our results and our client relationships speak for us.
+            </p>
+          </div>
+          <Image src="/images/Award badge.png" alt="Award badge" width={900} height={900} className="w-60" />
+        </div>
+      </section>
 
-      <Hero
-        title="Partner with a company that prioritizes capital preservation and strategic growth."
-        primaryCta={{ label: "Invest Now", href: "/contact" }}
-        backgroundImage="/images/cta.webp"
-        align="center"
-        size="compact"
-        className="my-16 lg:my-20"
-      />
+      <CallToAction className="my-16 lg:my-20" />
 
       <TrustSignals
-              signals={[
-                { label: "Registered & Regulated by SEC Nigeria", image: "/images/sec.png" },
-                { label: "Transparent reporting" },
-                { label: "Risk-managed investment approach" },
-              ]}
-            />
+        signals={[
+          { label: "Registered & Regulated by SEC Nigeria", image: "/images/sec.png" },
+          { label: "Transparent reporting" },
+          { label: "Risk-managed investment approach" },
+        ]}
+      />
     </HomeWrapper>
   );
 }

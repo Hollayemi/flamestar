@@ -75,7 +75,7 @@ export function Header() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 8 }}
                       transition={{ duration: 0.16, ease: "easeOut" }}
-                      className="absolute left-1/2 top-full w-72 -translate-x-1/2 pt-3"
+                      className="absolute left-1/2 top-full w-72 -translate-x-1/2 pt-5"
                     >
                       <div className="overflow-hidden rounded-2xl border border-black/8 bg-paper shadow-xl shadow-black/5">
                         {item.items.map((link) => (

@@ -1,12 +1,14 @@
+import type { ReactNode } from "react";
+
 export type LegalIntroProps = {
   title?: string;
-  paragraphs: string[];
+  paragraphs: ReactNode[];
   className?: string;
 };
 
 export function LegalIntro({ title = "Introduction", paragraphs, className = "" }: LegalIntroProps) {
   return (
-    <section className={`mx-auto max-w-3xl px-6 py-16 lg:px-10 ${className}`}>
+    <section className={`mx-auto max-w-4xl px-6 py-16 lg:px-10 ${className}`}>
       <h2 className="text-center font-display text-2xl font-semibold text-ink sm:text-3xl">
         {title}
       </h2>

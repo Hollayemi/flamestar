@@ -35,7 +35,7 @@ const defaultArticles: ArticleCardProps[] = [
     excerpt: "A look at how disciplined capital allocation compounds into lasting wealth over time.",
     date: "02/10/2025",
     readTime: "3 mins read",
-    href: "/insights/news",
+    href: "/market-insights/insight",
   },
   {
     image: "/images/news-nigerian-opportunities.jpg",
@@ -43,7 +43,7 @@ const defaultArticles: ArticleCardProps[] = [
     excerpt: "Where we see the strongest risk-adjusted opportunities across the Nigerian market.",
     date: "02/10/2025",
     readTime: "3 mins read",
-    href: "/insights/news",
+    href: "/market-insights/insight",
   },
   {
     image: "/images/news-market-outlook.jpg",
@@ -51,7 +51,7 @@ const defaultArticles: ArticleCardProps[] = [
     excerpt: "Our latest read on rates, liquidity, and positioning across the quarter ahead.",
     date: "02/10/2025",
     readTime: "3 mins read",
-    href: "/insights/news",
+    href: "/market-insights/insight",
   },
 ];
 
@@ -105,7 +105,7 @@ export function Leadership({
 
       <div className="mt-14 flex justify-center">
         <Link
-          href="/insights/news"
+          href="/market-insights"
           className="group inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-medium text-paper transition-colors hover:bg-ink-soft"
         >
           View All Articles

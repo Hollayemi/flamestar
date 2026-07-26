@@ -1,5 +1,5 @@
 import { HomeWrapper } from "@/components/wrapper";
-import { Hero } from "@/components/section/Hero";
+import { Hero, CallToAction } from "@/components/section/Hero";
 import { Pillars } from "@/components/section/investor-relation/Pillars";
 import { InvestorResources } from "@/components/section/investor-relation/InvestorResources";
 import { OnboardingProcess } from "@/components/section/investor-relation/OnboardingProcess";
@@ -47,14 +47,7 @@ export default function InvestorRelationsPage() {
       <InvestorResources />
       <OnboardingProcess />
 
-      <Hero
-        title="Partner with a company that prioritizes capital preservation and strategic growth."
-        primaryCta={{ label: "Invest Now", href: "/contact" }}
-        backgroundImage="/images/cta.webp"
-        size="compact"
-        align="center"
-        className="my-16 lg:my-20"
-      />
+      <CallToAction className="my-16 lg:my-20" />
       <TrustSignals
         signals={[
           { label: "Registered & Regulated by SEC Nigeria", image: "/images/sec.png" },

@@ -10,8 +10,8 @@ export type ContactIntroProps = {
 
 const defaultParagraphs = [
   "Not sure where to start?",
-  "Fill out yor information and our support staff will reach out to you. We tailor our services based on what matters to you.",
-  "We read every message. So thanks in advance for making it a good one.",
+  "Share a few details and a member of our team will reach out.",
+  "We tailor our approach around what matters most to you, and we read every message, so thank you in advance for making it a good one.",
 ];
 
 const defaultLogos: ContactIntroProps["logos"] = [
@@ -22,7 +22,7 @@ const defaultLogos: ContactIntroProps["logos"] = [
 ];
 
 export function ContactIntro({
-  title = "Contact us today and get answers to your profound questions.",
+  title = "Contact us today for clear, accurate answers to your most important questions.",
   paragraphs = defaultParagraphs,
   logos = defaultLogos,
   className = "",
@@ -39,23 +39,6 @@ export function ContactIntro({
             {paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
-          </div>
-
-          <div className="mt-14">
-            <p className="text-xs font-medium uppercase tracking-[0.14em] text-muted-light">
-              Trusted by various clients
-            </p>
-            <div className="mt-4 flex flex-wrap items-center gap-6">
-              {logos?.map((logo, index) => (
-                <span
-                  key={`${logo.name}-${index}`}
-                  className="flex items-center gap-1.5 text-sm font-semibold text-ink/70"
-                >
-                  <logo.icon className="h-4 w-4" />
-                  {logo.name}
-                </span>
-              ))}
-            </div>
           </div>
         </div>
 

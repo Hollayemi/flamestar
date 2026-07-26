@@ -1,16 +1,31 @@
 import { HomeWrapper } from "@/components/wrapper";
-import { Hero } from "@/components/section/Hero";
+import { Hero, CallToAction } from "@/components/section/Hero";
 import { LegalIntro } from "@/components/section/privacy/LegalIntro";
 import { FAQSection } from "@/components/section/privacy/FAQSection";
 import type { AccordionItem } from "@/components/ui/Accordion";
 
 const introParagraphs = [
-  'Flamestar Capital Limited treats personal information of users ("Users"/ "You"/ "Your") of the Flamestar Website "www.flamestarcapital.com.ng" and its other digital platforms (hereinafter called the "Site") as private and confidential.',
-  'This Privacy Policy ("Policy") describes what personal information Flamestar Capital Ltd collects, what the Flamestar Capital Ltd does with it, how Flamestar Capital Ltd protects it and how Flamestar Capital Ltd maintains information collected from Users of the Site. We are a Data Controller – meaning that we determine the purposes for and manner in which Personal Data is processed or is to be processed.',
-  'We believe strongly in fundamental privacy rights as embedded in Section 37 of the 1999 Constitution (as amended) (the Constitution). That is why we treat any data that relates to an identified or identifiable individual or that is linked or linkable to them by us as "personal data,". This means that data that directly identifies you — such as your name — is personal data, and also data that does not directly identify you, but that can reasonably be used to identify you — such as the serial number of your device — is personal data.',
-  'This Privacy Policy covers how Flamestar Capital Ltd handles personal data whether you interact with us on our websites, through Flamestar Capital Ltd application or in person (including by phone or when visiting our office). This Privacy Policy is in accordance with the Nigerian Data Protection Act 2023 (NDPA), regulations, guidelines and directives made pursuant to the NDPA ("Applicable Laws") and is binding on all data subjects whose Personal Data we process.',
-  "This Policy applies to usage of the Site as well as information contained on the Site, particularly, information related to products and services offered by Flamestar Capital Ltd.",
-  "Flamestar Capital Ltd is committed to ensuring that Your privacy is protected. Should We ask You to provide certain information by which You can be identified when using this Website, then You can be assured that it will only be used in accordance with this Policy.",
+  <>
+    <strong className="font-semibold text-ink">Who we are.</strong> Flamestar Capital Limited (“Flamestar,” “we,” “us”) is an investment management firm registered in Nigeria and regulated by the Securities and Exchange Commission. This policy explains how we handle personal information collected through this website.
+  </>,
+  <>
+    <strong className="font-semibold text-ink">What we collect.</strong>When you contact us or request information, we collect the details you provide — such as your name, email address, phone number, investment interest, and message. We may also collect basic technical data (such as browser type and pages visited) to help us improve the site.
+  </>,
+  <>
+    <strong className="font-semibold text-ink">How we use it.</strong> We use your information to respond to your enquiry, provide the services you request, meet our legal and regulatory obligations, and improve our website. We do not sell your personal information.
+  </>,
+  <>
+    <strong className="font-semibold text-ink">Legal basis &amp; your rights.</strong> We process your data on the basis of your consent and our legitimate business interests, in line with the Nigeria Data Protection Act. You may request access to, correction of, or deletion of your personal data at any time by contacting us.
+  </>,
+  <>
+    <strong className="font-semibold text-ink">Sharing &amp; security.</strong> We share personal data only with trusted service providers who help us operate, and only as necessary. We apply appropriate technical and organisational measures to protect your information.
+  </>,
+  <>
+    <strong className="font-semibold text-ink">Cookies.</strong> This site may use cookies or similar technologies to function and to understand how visitors use it. You can control cookies through your browser settings.
+  </>,
+  <>
+    <strong className="font-semibold text-ink">Contact.</strong>  For any privacy question or request, email info@flamestarcapital.com
+  </>,
 ];
 
 const faqItems: AccordionItem[] = [
@@ -69,20 +84,13 @@ export default function PrivacyPolicyPage() {
       <FAQSection
         items={faqItems}
         contact={{
-          name: "Luna Artemis",
-          email: "luna.artemis@flamestar.com",
-          phone: "+234 (1) 250 0034",
+          address: ["9A Oki Lane, Mende, Maryland, Lagos State"],
+          email: "info@flamestarcapital.com",
+          phone: "08122220683",
         }}
       />
 
-      <Hero
-        title="Partner with a company that prioritizes capital preservation and strategic growth."
-        primaryCta={{ label: "Invest Now", href: "/contact" }}
-        backgroundImage="/images/cta.webp"
-        size="compact"
-        align="center"
-        className="my-16 lg:my-20"
-      />
+      <CallToAction className="my-16 lg:my-20" />
     </HomeWrapper>
   );
 }

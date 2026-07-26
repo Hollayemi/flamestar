@@ -6,6 +6,7 @@ import { ArrowRight, ArrowUp, Flame, MapPin, Phone, Heart } from "lucide-react";
 import { companyInfo, footerLinks, socialLinks } from "@/lib/navigation";
 import { socialIconMap } from "@/components/ui/SocialIcons";
 import { DotMap } from "@/components/ui/DotMap";
+// import { useConsultation } from "@/lib/consultation-context";
 
 export function Footer() {
   return (
@@ -68,13 +69,6 @@ export function Footer() {
           </div>
 
           <div className="flex flex-col items-start gap-5 lg:items-end">
-            <Link
-              href="/contact"
-              className="group flex items-center gap-2 rounded-full bg-signal px-5 py-3 text-sm font-medium text-paper transition-colors hover:bg-signal/90"
-            >
-              Schedule Consultation
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-            </Link>
             <div className="flex items-center gap-3">
               {socialLinks.map((social) => {
                 const Icon = socialIconMap[social.label];
@@ -126,14 +120,6 @@ export function Footer() {
             Back to top
             <ArrowUp className="h-4 w-4" />
           </button>
-
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 rounded-full bg-signal px-5 py-2.5 text-xs font-semibold text-white"
-          >
-            Schedule Consultation
-            <ArrowRight className="h-3.5 w-3.5" />
-          </Link>
         </div>
 
         {/* Two Columns */}

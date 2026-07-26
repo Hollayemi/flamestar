@@ -14,7 +14,7 @@ const defaultSolutions: SolutionCardProps[] = [
     icon: Globe,
     title: "Investment Solutions",
     description:
-      "Custom-engineered portfolios designed to align global asset allocation with your specific risk-return objectives.",
+      "Custom built portfolios that align global and local asset allocation with your specific risk appetite and return objectives.",
     ctaLabel: "Explore Investment Solutions",
     href: "/strategies",
   },
@@ -22,7 +22,7 @@ const defaultSolutions: SolutionCardProps[] = [
     icon: Database,
     title: "Funds & Investment Schemes",
     description:
-      "Professional investment vehicles providing streamlined access to institutional-grade diversification and high-conviction market segments.",
+      "Professionally managed investment vehicles offering streamlined access to diversified, institutional grade portfolios across selected market segments.",
     ctaLabel: "Explore Funds & Investment Schemes",
     href: "/strategies/funds",
   },
@@ -30,7 +30,7 @@ const defaultSolutions: SolutionCardProps[] = [
     icon: Landmark,
     title: "Advisory & Capital Solutions",
     description:
-      "Strategic counsel and bespoke financing structures designed to optimize balance sheets and facilitate complex financial maneuvers.",
+      "Strategic counsel and bespoke financial structuring to help corporates and institutions optimize balance sheets and navigate complex decisions.",
     ctaLabel: "Explore Advisory & Capital Solutions",
     href: "/advisory",
   },
@@ -38,7 +38,7 @@ const defaultSolutions: SolutionCardProps[] = [
 
 export function Solutions({
   title = "Engineered Solutions for Capital Growth and Risk Mitigation",
-  description = "Our investment strategies are designed to navigate the complexities of global markets, providing a structured approach to asset appreciation through technical precision and institutional rigor.",
+  description = "Our strategies are designed to navigate the complexities of local and global markets with structure and discipline. Each is grounded in careful research, deliberate diversification, and institutional grade risk management.",
   solutions = defaultSolutions,
   className = "",
 }: SolutionsProps) {
@@ -85,7 +85,7 @@ export function Solutions({
   };
 
   return (
-    <section className={`mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28 ${className}`}>
+    <section className={`mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-20 ${className}`}>
       <div className="mx-auto max-w-2xl text-center">
         <h2 className="font-display text-2xl font-semibold text-ink sm:text-3xl">{title}</h2>
         <p className="mt-4 text-sm leading-relaxed text-muted-light sm:text-base">

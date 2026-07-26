@@ -1,19 +1,19 @@
-import { Mail, Phone, User } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { socialLinks } from "@/lib/navigation";
 import { socialIconMap } from "@/components/ui/SocialIcons";
 
 export type FAQContactCardProps = {
   title?: string;
   description?: string;
-  name: string;
+  address: string[];
   email: string;
   phone: string;
 };
 
 export function FAQContactCard({
   title = "Contact Us",
-  description = "If you have any questions or suggestions regarding our privacy policy, please contact our Data Protection Officer.",
-  name,
+  description = "If you have any questions or suggestions regarding our privacy policy, please visit our head office or contact us via our official channels.",
+  address,
   email,
   phone,
 }: FAQContactCardProps) {
@@ -23,9 +23,15 @@ export function FAQContactCard({
       <p className="mt-2 text-sm leading-relaxed text-muted-light">{description}</p>
 
       <div className="mt-6 flex flex-col gap-3 text-sm text-ink">
-        <span className="flex items-center gap-2.5">
-          <User className="h-4 w-4 text-muted-light" />
-          {name}
+        <span className="flex items-start gap-2.5">
+          <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-muted-light" />
+          <span>
+            {address.map((line) => (
+              <span key={line} className="block">
+                {line}
+              </span>
+            ))}
+          </span>
         </span>
         <a href={`mailto:${email}`} className="flex items-center gap-2.5 hover:text-ink">
           <Mail className="h-4 w-4 text-muted-light" />

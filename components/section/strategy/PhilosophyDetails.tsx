@@ -9,7 +9,7 @@ const defaultCards: ChipListCardProps[] = [
   {
     title: "Our Approach",
     description:
-      "Our investment methodology is governed by a rigorous technical framework that prioritizes structural stability and evidence-based decision-making to ensure long-term portfolio resilience.",
+      "Our methodology is governed by a rigorous framework that prioritizes structural stability and evidence based decision making for long term portfolio resilience built on capital preservation first, risk adjusted returns, diversification across asset classes.",
     items: [
       "Capital Preservation First",
       "Risk-Adjusted Returns",
@@ -20,7 +20,7 @@ const defaultCards: ChipListCardProps[] = [
   {
     title: "Asset Allocation Model",
     description:
-      "A strategically balanced framework designed to optimize returns by layering defensive stability with high-conviction growth across diverse asset classes.",
+      "A strategically balanced framework that layers defensive stability with selective growth, Fixed Income (lower risk), Equities (growth), Real Estate (stability and yield), and Alternatives (higher-return opportunities).",
     items: [
       "Fixed Income (Low Risk)",
       "Equities (Growth)",

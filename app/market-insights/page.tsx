@@ -1,11 +1,12 @@
 import type { InsightArticle } from "@/components/ui/InsightCard";
 import { HomeWrapper } from "@/components/wrapper";
-import { Hero } from "@/components/section/Hero";
+import { Hero, CallToAction } from "@/components/section/Hero";
 import { InsightsIntro } from "@/components/section/insight/InsightsIntro";
 import { FeaturedInsight } from "@/components/section/insight/FeaturedInsight";
 import { InsightsValueProps } from "@/components/section/insight/InsightsValueProps";
 import { InsightCategory } from "@/components/section/insight/InsightCategory";
 import { NewsletterSignup } from "@/components/section/insight/NewsletterSignup";
+import { TrustSignals } from "@/components/ui/TrustSignals";
 
 const dateAndReadTime = { date: "02/10/2025", readTime: "3 mins read" };
 const categories: { title: string; description: string; articles: InsightArticle[] }[] = [
@@ -106,8 +107,8 @@ export default function InsightsPage() {
 
       <FeaturedInsight
         image="/images/insight.webp"
-        title="Navigating Nigeria's Fixed Income Landscape in a High-Interest Rate Environment"
-        description="An in-depth review of current yields, government securities, and how investors can optimize returns while managing risk."
+        title="Building Wealth with Discipline: Why Process Beats Prediction"
+        description="Markets are unpredictable; a good process is not. Here is why we trust discipline over forecasts."
         cta={{ label: "Read Full Report", href: "/market-insights/insight" }}
       />
 
@@ -124,6 +125,14 @@ export default function InsightsPage() {
       ))}
 
       <NewsletterSignup className="pb-16 pt-6" />
+
+      <TrustSignals
+        signals={[
+          { label: "Registered & Regulated by SEC Nigeria", image: "/images/sec.png" },
+          { label: "Transparent reporting" },
+          { label: "Risk-managed investment approach" },
+        ]}
+      />
     </HomeWrapper>
   );
 }
