@@ -31,7 +31,7 @@ export function TeamMemberCard({
 
   return (
     <div
-      className={`relative aspect-[4/5] w-full overflow-hidden rounded-2xl bg-ink border-2 transition-colors duration-300 ${
+      className={`relative aspect-4/5 w-full overflow-hidden rounded-2xl bg-ink border-2 transition-colors duration-300 ${
         active ? ringColor : "border-transparent"
       }`}
     >
@@ -43,7 +43,7 @@ export function TeamMemberCard({
         sizes="(min-width: 1024px) 33vw, 60vw"
         className="object-cover"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/10 to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-t from-ink via-ink/10 to-transparent" />
 
       {bio && (
         <button

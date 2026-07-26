@@ -22,7 +22,7 @@ export function TeamMemberBioModal({ member, onClose, tone = "signal" }: TeamMem
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.18 }}
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-ink/60 px-4 py-10 backdrop-blur-sm"
+          className="fixed inset-0 z-100 flex items-center justify-center bg-ink/60 px-4 py-10 backdrop-blur-sm"
           onClick={onClose}
         >
           <motion.div
