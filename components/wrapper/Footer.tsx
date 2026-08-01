@@ -220,7 +220,7 @@ export function Footer() {
         </div>
       </div>
 
-      <img src="/images/flamestar.png" className="w-full h-auto pointer-events-none absolute -bottom-[0.4em] z-10 left-0 right-0" />
+      <img src="/images/flamestar.png" className="w-full h-auto pointer-events-none absolute bottom-[-0.4em] z-10 left-0 right-0" />
     </footer>
   );
 }

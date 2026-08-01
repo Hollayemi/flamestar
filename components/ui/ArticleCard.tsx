@@ -24,7 +24,7 @@ export function ArticleCard({ image, category, excerpt, date, readTime, href }: 
       transition={{ duration: 0.45, ease: "easeOut" }}
     >
       <Link href={href} className="group block border border-gray-200 rounded-2xl p-4 transition-colors hover:border-paper-light">
-        <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-paper-soft">
+        <div className="relative aspect-4/3 overflow-hidden rounded-2xl bg-paper-soft">
           <Image
             src={image}
             alt={category}

@@ -44,7 +44,7 @@ export function ArticleBody({ blocks, className = "" }: ArticleBodyProps) {
             return (
               <div
                 key={index}
-                className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl bg-paper-soft"
+                className="relative aspect-16/10 w-full overflow-hidden rounded-2xl bg-paper-soft"
               >
                 <Image
                   src={block.src}

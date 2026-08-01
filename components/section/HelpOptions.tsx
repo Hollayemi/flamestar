@@ -26,7 +26,7 @@ export function HelpOptions({
       </h2>
 
       <div className="mt-10 rounded-2xl border relative border-black/8 bg-paper p-8">
-        <span className="inline-block absolute -top-[14px] left-1/2 -translate-x-1/2 rounded-full bg-flame px-4 py-1.5 font-mono text-[10px] font-medium uppercase tracking-[0.14em] text-paper whitespace-nowrap">
+        <span className="inline-block absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-flame px-4 py-1.5 font-mono text-[10px] font-medium uppercase tracking-[0.14em] text-paper whitespace-nowrap">
           {badge}
         </span>
 

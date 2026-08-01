@@ -61,7 +61,7 @@ export function NewsletterSignup({
             </label>
             <button
               type="submit"
-              className="mt-10 rounded-[12px] bg-flame py-3.5 text-sm font-medium text-paper transition-colors hover:bg-flame-deep"
+              className="mt-10 rounded-xl bg-flame py-3.5 text-sm font-medium text-paper transition-colors hover:bg-flame-deep"
             >
               {submitted ? "Subscribed" : "Subscribe Now"}
             </button>
