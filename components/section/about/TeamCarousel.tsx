@@ -73,7 +73,7 @@ export function TeamCarousel({
     <section className={`mx-auto max-w-7xl px-6 lg:px-10 ${className}`}>
       <div className="sm:ml-20 md:ml-60">
         <h2 className="font-display text-2xl font-semibold text-ink sm:text-3xl">{title}</h2>
-        <p className={`mt-1 max-w-xl text-base sm:text-lg text-orange-400`}>{subtitle}</p>
+        <p className={`mt-1 max-w-xl text-lg sm:text-3xl text-[#EBB7B5]`}>{subtitle}</p>
       </div>
       <div className="mt-10 grid gap-8 lg:grid-cols-[200px_1fr]">
         <ul className="hidden md:flex flex-row gap-5  overflow-x-auto pb-2 lg:flex-col lg:gap-3 lg:overflow-visible lg:pb-0">
@@ -111,7 +111,7 @@ export function TeamCarousel({
                 ref={(el) => {
                   cardRefs.current[index] = el;
                 }}
-                className="w-[78%] shrink-0 snap-start sm:w-[46%] lg:w-[calc((100%-3rem)/3)]"
+                className="w-full shrink-0 snap-start sm:w-[46%] lg:w-[calc((100%-3rem)/3)]"
               >
                 <TeamMemberCard {...member} active={index === activeIndex} tone={tone} />
               </div>

@@ -1,3 +1,5 @@
+"use client"
+import { useConsultation } from "@/lib/consultation-context";
 import Link from "next/link";
 
 export type InsightsValuePropsProps = {
@@ -24,20 +26,23 @@ const defaultWhyMatters = {
   ],
 };
 
-const defaultNextSteps = {
-  title: "Take the next step beyond insights.",
-  ctas: [
-    { label: "Speak to an Advisor", href: "/contact" },
-    { label: "Download Investment Report", href: "/insights/reports" },
-    { label: "Start Investing", href: "/contact" },
-  ],
-};
+
 
 export function InsightsValueProps({
   whyMatters = defaultWhyMatters,
-  nextSteps = defaultNextSteps,
   className = "",
 }: InsightsValuePropsProps) {
+  const { open } = useConsultation();
+
+  const nextSteps = {
+    title: "Take the next step beyond insights.",
+    ctas: [
+      { label: "Speak to an Advisor", href: "/contact" },
+      { label: "Download Investment Report", href: "/insights/reports" },
+      { label: "Schedule Consultation", action: open },
+    ],
+  };
+
   return (
     <section className={`mx-auto max-w-7xl px-6 py-10 lg:px-10 ${className}`}>
       <div className="grid gap-6 lg:grid-cols-2">
@@ -68,7 +73,8 @@ export function InsightsValueProps({
             {nextSteps.ctas?.map((cta) => (
               <Link
                 key={cta.label}
-                href={cta.href}
+                href={cta.href ? cta.href : "#"}
+                onClick={cta.action}
                 className="rounded-full bg-flame py-3.5 text-center text-sm font-medium text-paper transition-colors hover:bg-flame-deep"
               >
                 {cta.label}

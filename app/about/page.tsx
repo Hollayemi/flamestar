@@ -116,14 +116,14 @@ export default function AboutPage() {
         title="A New Standard in Africa for Fund/Portfolio and Asset Management"
         description="Flamestar Capital Ltd is an investment management company focused on delivering sustainable wealth solutions. We combine local market intelligence with global investment principles to help clients grow and preserve capital."
         backgroundImage="/images/about-zuma-rock.webp"
-        imageCredit="Zuma Rock, Abuja, Nigeria. Image Courtesy of iStockphoto & Lingbeek"
+        imageCredit={["Zuma Rock, Abuja, Nigeria.", "Image Courtesy of iStockphoto & Lingbeek"]}
         size="tall"
         className="mt-4 lg:mt-2"
       />
 
       <AboutIntro />
 
-      <TrustFeatures items={defaultItems} />
+      <TrustFeatures items={defaultItems} total={3} />
 
       <MissionVision />
 
@@ -151,7 +151,7 @@ export default function AboutPage() {
  
 
       <section className={`mx-auto max-w-7xl px-6 py-20 lg:px-10`}>
-        <div className=" flex items-center justify-between">
+        <div className="flex flex-col md:flex-row items-center justify-between">
           <div>
             <h2 className="font-display text-2xl font-semibold text-ink sm:text-3xl mb-4">Held to institutional standards</h2>
             <p className="max-w-2xl text-sm leading-relaxed text-muted-light sm:text-base">

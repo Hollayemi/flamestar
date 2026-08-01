@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { DotMap } from "@/components/ui/DotMap";
+import Image from "next/image";
 
 export type NewsletterSignupProps = {
   title?: string;
@@ -23,9 +23,16 @@ export function NewsletterSignup({
   };
 
   return (
-    <section className={`mx-auto max-w-7xl px-6 py-10 lg:px-10 ${className}`}>
+    <section className={`mx-auto max-w-5xl px-6 py-10 lg:px-10 ${className}`}>
       <div className="relative overflow-hidden rounded-3xl bg-ink p-8 text-paper sm:p-12">
-        <DotMap tone="flame" />
+        <Image
+          src={"/images/cta.webp"}
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-top"
+        />
 
         <div className="relative grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-start">
           <div>
@@ -54,7 +61,7 @@ export function NewsletterSignup({
             </label>
             <button
               type="submit"
-              className="mt-1 rounded-full bg-flame py-3.5 text-sm font-medium text-paper transition-colors hover:bg-flame-deep"
+              className="mt-10 rounded-[12px] bg-flame py-3.5 text-sm font-medium text-paper transition-colors hover:bg-flame-deep"
             >
               {submitted ? "Subscribed" : "Subscribe Now"}
             </button>

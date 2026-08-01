@@ -34,7 +34,7 @@ export function Header() {
         : "bg-transparent border-b border-transparent"
         }`}
     >
-      <div className="mx-auto flex h-18 max-w-7xl items-center justify-between px-6 md:px-0 py-4">
+      <div className="mx-auto flex h-18 max-w-7xl items-center justify-between px-10 py-4">
         <div className="flex items-center gap-6">
           <Link href="/" className="flex items-center gap-2.5" onClick={() => setMobileOpen(false)}>
             <Image src="/images/logo.png" alt="logo" className="w-40" width={900} height={900} />
@@ -75,7 +75,7 @@ export function Header() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 8 }}
                       transition={{ duration: 0.16, ease: "easeOut" }}
-                      className="absolute left-1/2 top-full w-72 -translate-x-1/2 pt-5"
+                      className="absolute left-1/2 top-full w-72 -translate-x-1/2 pt-7"
                     >
                       <div className="overflow-hidden rounded-2xl border border-black/8 bg-paper shadow-xl shadow-black/5">
                         {item.items.map((link) => (

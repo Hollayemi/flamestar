@@ -23,26 +23,16 @@ export default function Home() {
         size="tall"
       />
 
-      <div className="bg-white max-w-7xl mx-auto py-12 px-6">
+      <div className="bg-white py-12">
         <div className="flex flex-col w-full md:flex-row justify-between">
-          <p className="text-lg w-full md:w-3/5 md:pr-20 text-gray-800 mb-8">
-            We are your trusted partner on your financial journey. We specialize in providing tailored investment solutions designed to help you achieve your goals, and grow your wealth.
-          </p>
+          <p className="text-lg w-full text-gray-800 mb-8 px-8">
+            We are a new generation of investment manager — and we believe that is a strength. Built for the way today's
+            investors want to be served, Flamestar Capital pairs rigorous, data-driven analysis with a genuine fiduciary
+            commitment, your interests, first and always. Whether you are an individual building lasting wealth, a corporate
+            treasury seeking stability, or an institution pursuing risk adjusted returns, we partner with you with clarity,
+            discipline, and complete transparency.
+           </p>
 
-          <div className="flex items-start w-full md:w-2/5 gap-5 lg:gap-8">
-            <div className="w-1/3">
-              <div className="text-2xl font-bold text-gray-900">$10.8B</div>
-              <div className="text-sm text-gray-500">Assets Under Management</div>
-            </div>
-            <div className="w-1/3">
-              <div className="text-2xl font-bold text-gray-900">2 Years</div>
-              <div className="text-sm text-gray-500">Years in Service</div>
-            </div>
-            <div className="w-1/3">
-              <div className="text-2xl font-bold text-gray-900">97%</div>
-              <div className="text-sm text-gray-500">Retention Rate</div>
-            </div>
-          </div>
         </div>
       </div>
 

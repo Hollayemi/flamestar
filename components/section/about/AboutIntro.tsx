@@ -11,6 +11,7 @@ const defaultAudience = [
   "High Net Worth Individuals (HNWIs)",
   "Corporate Clients",
   "Institutional Investors",
+  "Retail Investors",
 ];
 
 export function AboutIntro({

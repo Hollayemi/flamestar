@@ -27,7 +27,7 @@ export type HeroProps = {
   /** If provided, renders as a photo hero with a dark scrim instead of the dot-map */
   backgroundImage?: string;
   /** Small caption under an image hero, e.g. photo credit */
-  imageCredit?: string;
+  imageCredit?: [string, string?];
   align?: "left" | "center";
   /** "tall" for page heroes, "compact" for banner-style CTA sections */
   size?: "tall" | "compact";
@@ -74,7 +74,7 @@ export function Hero({
   };
 
   return (
-    <div className={`mx-auto ${className}`}>
+    <div className={`mx-auto relative ${className}`}>
       <section
         className={`relative flex overflow-hidden md:rounded-3xl bg-ink text-paper ${isImage ? "items-end" : "items-center"
           } ${heroSizeClasses[size]}`}
@@ -168,13 +168,15 @@ export function Hero({
             </motion.div>
           )}
 
-          {isImage && imageCredit && (
-            <motion.span variants={item} className="mt-4 text-xs text-paper/50">
-              {imageCredit}
-            </motion.span>
-          )}
         </motion.div>
       </section>
+          {isImage && imageCredit && (
+            <span  className="mt-4 text-xs text-paper/50 absolute bottom-6 right-4 sm:right-6">
+              {imageCredit[0]}
+              <br />
+              {imageCredit[1]}
+            </span>
+          )}
     </div>
   );
 }
@@ -208,7 +210,7 @@ export function CallToAction({ className }: CallToActionProps) {
   return (
     <div className={`mx-auto md:px-4 ${className}`}>
       <section
-        className={`relative flex overflow-hidden md:rounded-3xl bg-ink text-paper items-center min-h-90 py-14`}
+        className={`relative flex overflow-hidden md:rounded-3xl bg-ink text-paper items-center min-h-70 py-14`}
       >
         <Image
           src={"/images/cta.webp"}
@@ -228,9 +230,9 @@ export function CallToAction({ className }: CallToActionProps) {
         >
           <motion.h2
             variants={item}
-            className={`font-display text-3xl font-semibold leading-[1.08] tracking-tight sm:text-4xl lg:text-5xl`}
+            className={`font-display text-2xl font-semibold  tracking-tight leading-10 sm:text-3xl lg:text-3xl`}
           >
-            Partner with a company that prioritizes capital preservation and strategic growth.
+            Partner with a firm that puts capital preservation and your interests first.
           </motion.h2>
 
 

@@ -46,14 +46,14 @@ export function TrackFoundation({
         {eyebrow}
       </span>
 
-      <div className="mt-6 grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-16">
-        <div>
+      <div className="mt-6 grid grid-cols-1 gap-10 lg:grid-cols-3 lg:gap-16">
+        <div className="col-span-2">
           <h2 className="font-display text-2xl font-semibold text-ink sm:text-3xl">{title}</h2>
-          <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-light">{description}</p>
+          <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted-light">{description}</p>
         </div>
 
         {first && (
-          <div className="border-l border-signal/25 pl-5">
+          <div className="border-l-4 border-black/15 pl-5 md:-ml-6">
             <p className="font-mono text-2xl font-semibold text-signal/60">{first.number}</p>
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-ink">{first.description}</p>
           </div>
@@ -63,7 +63,7 @@ export function TrackFoundation({
       {rest.length > 0 && (
         <div className="mt-14 grid grid-cols-1 gap-10 sm:grid-cols-3 sm:gap-8">
           {rest.map((item) => (
-            <div key={item.number} className="border-l border-signal/25 pl-5">
+            <div key={item.number} className="border-l-4 border-black/15 pl-5">
               <p className="font-mono text-2xl font-semibold text-signal/60">{item.number}</p>
               <p className="mt-3 text-sm leading-relaxed text-ink">{item.description}</p>
             </div>

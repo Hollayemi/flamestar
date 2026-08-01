@@ -13,13 +13,13 @@ export type TrustSignalsProps = {
 export function TrustSignals({ signals, className = "" }: TrustSignalsProps) {
   return (
     <section className={`mx-auto max-w-6xl px-6 py-14 lg:px-10 ${className}`}>
-      <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-4">
+      <div className="flex flex-wrap items-center justify-center gap-y-4 divide-x divide- divide-black/8">
         {signals.map((signal) => {
           
           return (
             <span
               key={signal.label}
-              className="flex items-center gap-2 text-base font-medium text-ink"
+              className="flex items-center gap-2 text-xs md:text-base font-medium text-ink px-6"
             >
               {signal.label}
               {signal.image && (

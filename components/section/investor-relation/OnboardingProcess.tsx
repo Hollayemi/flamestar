@@ -43,9 +43,9 @@ export function OnboardingProcess({
         <p className="mt-3 text-sm leading-relaxed text-muted-light sm:text-base">{description}</p>
       </div>
 
-      <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2">
-        {steps.map((step) => (
-          <StepCard key={step.number} {...step} />
+      <div className="mx-auto max-w-3xl mt-12 grid grid-cols-1 gap-6 sm:grid-cols-10">
+        {steps.map((step, index) => (
+          <StepCard key={step.number} index={index} {...step} />
         ))}
       </div>
     </section>

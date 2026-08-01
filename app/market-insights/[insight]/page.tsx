@@ -1,11 +1,14 @@
-import type { ArticleCardProps } from "@/components/ui/ArticleCard";
+"use client"
+
 import { HomeWrapper } from "@/components/wrapper";
 import { ArticleHero } from "@/components/section/insight/ArticleHero";
 import { ArticleMeta } from "@/components/ui/ArticleMeta";
 import { ArticleBlock, ArticleBody } from "@/components/section/insight/ArticleBody";
-import { ArticleGrid } from "@/components/section/strategy/ArticleGrid";
-import { Hero, CallToAction } from "@/components/section/Hero";
+import { CallToAction } from "@/components/section/Hero";
 import { TrustSignals } from "@/components/ui/TrustSignals";
+import { categories } from "../data";
+import { InsightCategory } from "@/components/section/insight/InsightCategory";
+import { usePathname } from "next/navigation";
 
 const contentBlocks: ArticleBlock[] = [
   { type: "heading", text: "Those principles busy slipstream already light" },
@@ -45,39 +48,15 @@ const contentBlocks: ArticleBlock[] = [
   },
 ];
 
-const otherArticles: ArticleCardProps[] = [
-  {
-    image: "/images/record.jpg",
-    category: "Wealth creation",
-    excerpt:
-      "How a disciplined, multi-asset approach helps clients grow and protect long-term wealth.",
-    date: "02/10/2025",
-    readTime: "3 mins read",
-    href: "/market-insights/insight",
-  },
-  {
-    image: "/images/image4.webp",
-    category: "Nigerian investment opportunities",
-    excerpt: "Where we see the strongest risk-adjusted opportunities across the Nigerian market.",
-    date: "02/10/2025",
-    readTime: "3 mins read",
-    href: "/market-insights/insight",
-  },
-  {
-    image: "/images/record2.webp",
-    category: "Market Outlook",
-    excerpt: "Our latest read on rates, liquidity, and positioning across the quarter ahead.",
-    date: "02/10/2025",
-    readTime: "3 mins read",
-    href: "/market-insights/insight",
-  },
-];
 
 export default function ArticlePage() {
+  const pathname = usePathname()
+  console.log(pathname)
+  const getArticle = categories.flatMap((category) => category.articles).find((article) => article.href === pathname);
   return (
     <HomeWrapper>
       <ArticleHero
-        title="Building Wealth with Discipline: Why Process Beats Prediction"
+        title={getArticle?.title || ""}
         description="Markets are unpredictable; a good process is not. Here is why we trust discipline over forecasts."
         backgroundImage="/images/insight.webp"
         backHref="/market-insights"
@@ -96,31 +75,23 @@ export default function ArticlePage() {
       </div>
 
       <div className="mx-auto max-w-7xl px-6 pb-16 lg:px-10">
-        <ArticleBody blocks={contentBlocks} />
+        <ArticleBody blocks={getArticle?.content || []} />
       </div>
 
-      <ArticleGrid
-        title="Other Articles"
-        description="Explore more perspectives on wealth creation, market opportunities, and the strategies shaping how we invest."
-        articles={otherArticles}
-      />
 
-      <Hero
-        title="Partner with a company that prioritizes capital preservation and strategic growth."
-        primaryCta={{ label: "Invest Now", href: "/contact" }}
-        backgroundImage="/images/cta.webp"
-        align="center"
-        size="compact"
-        className="my-16 lg:my-20"
-      />
+      {categories.map((category) => !category.hide ? (
+        <InsightCategory key={category.title} {...category} />
+      ) : null)}
+
+      <CallToAction className="my-16 lg:my-20" />
 
       <TrustSignals
-              signals={[
-                { label: "Registered & Regulated by SEC Nigeria", image: "/images/sec.png" },
-                { label: "Transparent reporting" },
-                { label: "Risk-managed investment approach" },
-              ]}
-            />
+        signals={[
+          { label: "Registered & Regulated by SEC Nigeria", image: "/images/sec.png" },
+          { label: "Transparent reporting" },
+          { label: "Risk-managed investment approach" },
+        ]}
+      />
     </HomeWrapper>
   );
 }

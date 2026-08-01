@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, ArrowUp, Flame, MapPin, Phone, Heart } from "lucide-react";
+import { ArrowRight, ArrowUp, Flame, MapPin, Phone, Heart, ChevronUp } from "lucide-react";
 import { companyInfo, footerLinks, socialLinks } from "@/lib/navigation";
 import { socialIconMap } from "@/components/ui/SocialIcons";
 import { DotMap } from "@/components/ui/DotMap";
@@ -12,7 +12,7 @@ export function Footer() {
   return (
     <footer className="relative overflow-hidden bg-white text-black!">
       <div className="relative hidden md:block z-40 mx-auto max-w-7xl px-6 pb-28 pt-16 lg:px-10 lg:pt-20">
-        <div className="grid gap-12 lg:grid-cols-[auto_1fr_1fr_auto] lg:gap-8">
+        <div className="grid gap-12 lg:grid-cols-4 lg:gap-8">
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className="group flex h-fit items-center gap-2 text-sm font-medium text-gray-600 transition-colors hover:text-gray-900"
@@ -22,7 +22,7 @@ export function Footer() {
               className="flex h-7 w-7 items-center justify-center rounded-full border border-gray-200"
               whileHover={{ y: -2 }}
             >
-              <ArrowUp className="h-3.5 w-3.5" />
+              <ChevronUp className="h-3.5 w-3.5" />
             </motion.span>
           </button>
 
@@ -90,13 +90,17 @@ export function Footer() {
         </div>
 
         <div className="mt-14 border-t border-black pt-6">
-          <p className="text-xs leading-relaxed text-black">
+          <p className="text-xs leading-relaxed text-black pr-10">
             <span className="font-medium text-black">Disclaimer: </span>
-            Investments carry risk. Flamestar Capital Ltd does not guarantee returns.
+             Investing involves risk, including the possible loss of capital. Past performance 
+            is not a guarantee of future results. Nothing on this 
+            website constitutes investment advice or an offer or solicitation 
+            to buy or sell any security. Flamestar Capital Limited does not guarantee 
+            any return. Please seek professional advice before making investment decisions.
           </p>
         </div>
 
-        <div className="mt-6 flex flex-col-reverse items-start justify-between gap-4 sm:flex-row sm:items-center">
+        <div className="mt-6 flex flex-col-reverse mb-18 items-start justify-between gap-4 sm:flex-row sm:items-center">
           <div className="flex items-center gap-2">
             <img src="/images/icon.png" alt="Flamestar Capital Logo" className="h-6 w-6" />
             <span className="text-xs text-gray-600">
@@ -104,7 +108,9 @@ export function Footer() {
             </span>
           </div>
           <span className="text-xs text-gray-400 flex items-center">
-            Made with <Heart className="text-red-500 w-8 px-1" size={14} fill="currentColor" /> by <span className="text-gray-600 px-1">DigitaHeart</span>
+            Made with 
+            <img src="/images/digitalheart.png" className="w-4 h-3 mx-2!" />
+            by <span className="text-gray-600 font-bold px-1">DigitaHeart</span>
           </span>
         </div>
       </div>
@@ -179,10 +185,13 @@ export function Footer() {
         </div>
 
         {/* Disclaimer */}
-        <div className="border-t border-gray-200 pt-5">
+        <div className="border-t border-gray-100 pt-5 md:pr-50">
           <p className="text-[11px] leading-relaxed text-gray-500">
-            <span className="font-semibold">Disclaimer:</span> Investments carry
-            risk. Flamestar Capital Ltd does not guarantee returns.
+            <span className="font-semibold">Disclaimer:</span>  Investing involves risk, including the possible loss of capital. Past performance 
+            is not a guarantee of future results. Nothing on this 
+            website constitutes investment advice or an offer or solicitation 
+            to buy or sell any security. Flamestar Capital Limited does not guarantee 
+            any return. Please seek professional advice before making investment decisions.
           </p>
         </div>
 
@@ -192,7 +201,7 @@ export function Footer() {
             <img
               src="/images/icon.png"
               alt="Flamestar"
-              className="h-5 w-5"
+              className="h-5 w-5 mx-2"
             />
             <span>
               © {new Date().getFullYear()} Flamestar Capital Ltd. All rights
@@ -202,10 +211,7 @@ export function Footer() {
 
           <div className="flex items-center gap-1">
             Made with
-            <Heart
-              className="h-3.5 w-3.5 text-red-500"
-              fill="currentColor"
-            />
+            <img src="/images/digitalheart.png" className="w-4 h-4" />
             by
             <span className="font-medium text-gray-700">
               DigitaHeart
@@ -214,12 +220,7 @@ export function Footer() {
         </div>
       </div>
 
-      <span
-        aria-hidden="true"
-        className="pointer-events-none absolute -bottom-[0.4em] z-10 left-0 right-0 opacity-40 select-none whitespace-nowrap text-center font-display text-[clamp(6rem,28vw,30rem)] font-bold leading-none text-gray-200"
-      >
-        Flamestar
-      </span>
+      <img src="/images/flamestar.png" className="w-full h-auto pointer-events-none absolute -bottom-[0.4em] z-10 left-0 right-0" />
     </footer>
   );
 }

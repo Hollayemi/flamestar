@@ -54,7 +54,7 @@ export function Pillars({
     <section className={`relative overflow-hidden ${className}`}>
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 top-0 h-[560px] w-[900px] -translate-x-1/2 rounded-full bg-flame/10 blur-[120px]"
+        className="pointer-events-none absolute left-1/2 top-0 h-[360px] w-[700px] -translate-x-1/2 mt-40 rounded-full bg-flame/10 blur-[120px]"
       />
 
       <div className="relative mx-auto max-w-7xl px-6 py-20 lg:px-10 lg:py-28">

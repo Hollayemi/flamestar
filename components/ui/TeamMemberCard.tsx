@@ -31,7 +31,7 @@ export function TeamMemberCard({
 
   return (
     <div
-      className={`relative aspect-4/5 w-full overflow-hidden rounded-2xl bg-ink border-2 transition-colors duration-300 ${
+      className={`relative h-80 w-full overflow-hidden rounded-2xl bg-ink border-2 transition-colors duration-300 ${
         active ? ringColor : "border-transparent"
       }`}
     >
