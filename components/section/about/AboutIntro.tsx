@@ -29,11 +29,7 @@ export function AboutIntro({
           <p className="max-w-2xl text-sm leading-relaxed text-muted-light sm:text-base">
             {description ?? (
               <>
-                Flamestar Capital Limited is a modern fund and portfolio management firm
-                dedicated to delivering considered, risk adjusted investment strategies. At
-                Flamestar, we bring something increasingly rare to the market, a clean slate,
-                and a commitment to transparency built into everything we do from day one. We
-                serve:
+                Flamestar Capital Limited is a modern fund and portfolio management firm dedicated to delivering considered, risk adjusted investment strategies. At Flamestar, we bring something increasingly rare to the market, a clean slate, a fiduciary first culture, and a commitment to transparency built into everything we do from day one. We serve:
               </>
             )}
           </p>

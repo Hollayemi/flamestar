@@ -151,7 +151,7 @@ export default function AboutPage() {
  
 
       <section className={`mx-auto max-w-7xl px-6 py-20 lg:px-10`}>
-        <div className="flex flex-col md:flex-row items-center justify-between">
+        <div className="flex flex-col md:flex-row items-center justify-evenly">
           <div>
             <h2 className="font-display text-2xl font-semibold text-ink sm:text-3xl mb-4">Held to institutional standards</h2>
             <p className="max-w-2xl text-sm leading-relaxed text-muted-light sm:text-base">
