@@ -21,7 +21,7 @@ export function MissionVision({
     <section className={`mx-auto max-w-7xl px-2 py-10 lg:px-10 ${className}`}>
       <div className="rounded-3xl bg-paper-soft p-3 sm:p-12">
         <div className="md:flex gap-6 items-start">
-          <span className="rounded-full border h-8! leading-8! border-black/10 bg-paper px-4  font-mono!  text-[10px] font-regular font-[400] uppercase tracking-[0.16em] text-ink/70">
+          <span className="rounded-full border h-8! leading-8! border-black/10 bg-paper px-4  font-mono!  text-[10px] font-regular uppercase tracking-[0.16em] text-ink/70">
             {missionLabel}
           </span>
           <p className="max-w-2xl font-display text-xl font-semibold leading-snug text-ink sm:text-2xl">
