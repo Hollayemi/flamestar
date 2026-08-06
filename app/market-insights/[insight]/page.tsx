@@ -60,7 +60,6 @@ export default function ArticlePage() {
         description="Markets are unpredictable; a good process is not. Here is why we trust discipline over forecasts."
         backgroundImage="/images/insight.webp"
         backHref="/market-insights"
-        className="mt-4 lg:mt-6"
       />
 
       <div className="mx-auto max-w-7xl px-6 py-12 lg:px-10">

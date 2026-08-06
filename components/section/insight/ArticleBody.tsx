@@ -3,6 +3,7 @@ import Image from "next/image";
 export type ArticleBlock =
   | { type: "heading"; text: string }
   | { type: "paragraph"; text: string }
+  | { type: "subheading"; text: string; count?: number }
   | { type: "quote"; text: string }
   | { type: "image"; src: string; alt?: string };
 
@@ -12,6 +13,8 @@ export type ArticleBodyProps = {
 };
 
 export function ArticleBody({ blocks, className = "" }: ArticleBodyProps) {
+  let subheadingCount = 0;
+
   return (
     <div className={`mx-auto flex max-w-3xl flex-col gap-6 ${className}`}>
       {blocks.map((block, index) => {
@@ -30,6 +33,17 @@ export function ArticleBody({ blocks, className = "" }: ArticleBodyProps) {
               <p key={index} className="text-sm leading-relaxed text-muted-light sm:text-base">
                 {block.text}
               </p>
+            );
+          case "subheading":
+            subheadingCount += 1;
+            return (
+              <h3
+                key={index}
+                className="mt-2 font-display text-lg font-semibold text-ink sm:text-xl"
+              >
+                {block.count !== undefined ? `${block.count}. ` : ""}
+                {block.text}
+              </h3>
             );
           case "quote":
             return (

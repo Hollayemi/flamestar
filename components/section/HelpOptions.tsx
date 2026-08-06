@@ -10,13 +10,20 @@ export type HelpOptionsProps = {
   className?: string;
 };
 
+export const constactInfo = {
+  phoneNumber : "08122220683",
+  whatsappHref : "https://wa.me/2348122220683",
+  email : "info@flamestarcapital.com",
+  address : "9A Oki Lane, Mende, Maryland, Lagos State",
+}
+
 export function HelpOptions({
   title = "We're here to help",
   badge = "Fastest Response Time",
-  phoneNumber = "08122220683",
-  whatsappHref = "https://wa.me/2348122220683",
-  email = "info@flamestarcapital.com",
-  address = "9A Oki Lane, Mende, Maryland, Lagos State",
+  phoneNumber = constactInfo.phoneNumber,
+  whatsappHref = constactInfo.whatsappHref,
+  email = constactInfo.email,
+  address = constactInfo.address,
   className = "",
 }: HelpOptionsProps) {
   return (

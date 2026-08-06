@@ -13,7 +13,6 @@ export default function TrackRecordPage() {
         title="Delivering Measurable Investment Performance"
         backgroundImage="/images/track-record.webp"
         size="tall"
-        className="mt-4 lg:mt-2"
       />
 
       <TrackRecordOverview />

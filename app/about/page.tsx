@@ -11,87 +11,81 @@ import Image from "next/image";
 
 const leadershipTeam: TeamMember[] = [
   {
-    name: "Randy Theophilus",
-    role: "Chairman, Flamestar Capital",
-    photo: "/images/user1.png",
-    bio: "Randy sets the strategic direction for Flamestar Capital, drawing on two decades of experience across banking, private equity, and portfolio management. He is focused on building a firm that puts client outcomes and fiduciary duty above all else.",
+    name: "Yahaya Blessing Batare",
+    role: "Chief Executive Officer",
+    photo: "/images/ceo-portrait.png",
+    bio: "Yahaya Blessing Batare is a performance driven finance executive with two decades experience across leading financial institutions, she has held senior positions in Treasury, Business Development, and Portfolio management. Known for her strategic vision, disciplined risk management, and unwavering integrity, she combines sharp financial acumen with a deep commitment to building businesses and creating value for clients and the wider public, a dependable, results-oriented leader trusted to deliver.",
   },
   {
-    name: "Yetunde Rachael",
-    role: "Head of Finance",
-    photo: "/images/user2.png",
-    bio: "Yetunde oversees Flamestar's financial operations and reporting, bringing rigorous financial controls and transparent reporting practices to every client mandate she touches.",
+    name: "Olushola Adegbite",
+    role: "CHIEF FINANCE OFFICER",
+    photo: "/images/olusola.png",
+    bio: "Olushola Adegbite is  a Fellow of the Institute of Chartered Accountants of Nigeria (FCA) with over twenty-two years’ experience across financial management, internal audit, risk, and investment management, he has served as CFO and Head of Risk & Control at Resort Securities & Trust and built the internal audit and compliance function at St. Nicholas Hospital. IFRS-certified and a fellow across accounting and internal auditing bodies, he brings disciplined, principled leadership to safeguarding capital and driving sustainable value, a finance executive widely regarded as one of the best in his craft.",
   },
   {
-    name: "Badmus Adebayo",
-    role: "Head of Innovation",
-    photo: "/images/user3.png",
-    bio: "Badmus leads Flamestar's technology and product innovation efforts, building the tools and infrastructure that keep the firm's investment process disciplined, data-driven, and scalable.",
+    name: "Abiola Olayinka Alake",
+    role: "CHIEF COMPLIANCE OFFICER",
+    photo: "/images/alake.png",
+    bio: "Abiola Olayinka Alake has nearly two decades experience in the Nigerian capital market, she has served as Chief Compliance Officer and Compliance Officer across several capital market firms, leading KYC/KYE due diligence, anti-money laundering controls, compliance audits, and regulatory reporting to the SEC and NGX. A registered SEC Sponsored Individual with a Bachelor of Science in Accounting, she is a meticulous, principled, and grounded professional dedicated to protecting clients, upholding regulatory standards, and safeguarding the integrity of every firm she serves.",
   },
   {
-    name: "Mohammed Jimoh",
-    role: "Head of Strategy",
-    photo: "/images/user4.png",
-    bio: "Mohammed shapes Flamestar's investment strategy and asset allocation frameworks, translating macroeconomic research into portfolios built for long-term, risk-adjusted performance.",
-  },
-  {
-    name: "Favor Nonso",
-    role: "Head of Operations",
-    photo: "/images/user5.png",
-    bio: "Favor ensures Flamestar's day-to-day operations run smoothly and securely, so clients experience seamless service at every stage of their investment journey.",
+    name: "Faith Ozegbe",
+    role: "HEAD PEOPLE OPERATIONS",
+    photo: "/images/faith.png",
+    bio: "Faith Ozegbe is a thoroughbred HR generalist with years’ of progressive experience across the full employee lifecycle, she has delivered recruitment, onboarding, employee relations, and HR operations support at The Concept Group and Medicano Resources, and holds a B.Sc. (Upper Division) from Delta State University. Recognised for her integrity, confidentiality, and commitment to a positive employee experience, and known for driving measurable efficiency gains, she is building the culture and systems that help Flamestar Capital attract, develop, and retain exceptional talent.",
   },
 ];
 
-const engineroomTeam: TeamMember[] = [
-  {
-    name: "Randy Theophilus",
-    role: "R&D Manager",
-    photo: "/images/user6.png",
-    bio: "Randy leads research and development for Flamestar's investment tools, testing new approaches to risk modeling and portfolio construction before they reach client accounts.",
-  },
-  {
-    name: "Yetunde Rachael",
-    role: "Compliance Officer",
-    photo: "/images/user5.png",
-    bio: "Yetunde keeps Flamestar aligned with SEC Nigeria's regulatory requirements, safeguarding the integrity of the firm's investment process and client reporting.",
-  },
-  {
-    name: "Badmus Adebayo",
-    role: "Product Manager",
-    photo: "/images/user4.png",
-    bio: "Badmus manages the roadmap for Flamestar's client-facing tools, working closely with the investment team to turn complex portfolio data into clear, actionable reporting.",
-  },
-  {
-    name: "Mohammed Jimoh",
-    role: "Engineer",
-    photo: "/images/user3.png",
-    bio: "Mohammed builds and maintains the systems that power Flamestar's portfolio monitoring and reporting infrastructure.",
-  },
-  {
-    name: "Favor Nonso",
-    role: "Designer",
-    photo: "/images/user2.png",
-    bio: "Favor shapes the way clients experience Flamestar's digital tools, designing clear, trustworthy interfaces for a complex financial product.",
-  },
-  {
-    name: "Dada Joshua",
-    role: "Engineer",
-    photo: "/images/user1.png",
-    bio: "Dada works across Flamestar's engineering stack, focused on the reliability and security of the systems clients depend on.",
-  },
-  {
-    name: "Anu Alabi",
-    role: "Analyst",
-    photo: "/images/user6.png",
-    bio: "Anu supports the investment team with data analysis and research, helping translate market signals into actionable portfolio insights.",
-  },
-  {
-    name: "Gbenga Ahmed",
-    role: "Support Lead",
-    photo: "/images/user5.png",
-    bio: "Gbenga leads client support at Flamestar, making sure every enquiry is met with clarity, care, and a fast response.",
-  },
-];
+// const engineroomTeam: TeamMember[] = [
+//   {
+//     name: "Randy Theophilus",
+//     role: "R&D Manager",
+//     photo: "/images/user6.png",
+//     bio: "Randy leads research and development for Flamestar's investment tools, testing new approaches to risk modeling and portfolio construction before they reach client accounts.",
+//   },
+//   {
+//     name: "Yetunde Rachael",
+//     role: "Compliance Officer",
+//     photo: "/images/user5.png",
+//     bio: "Yetunde keeps Flamestar aligned with SEC Nigeria's regulatory requirements, safeguarding the integrity of the firm's investment process and client reporting.",
+//   },
+//   {
+//     name: "Badmus Adebayo",
+//     role: "Product Manager",
+//     photo: "/images/user4.png",
+//     bio: "Badmus manages the roadmap for Flamestar's client-facing tools, working closely with the investment team to turn complex portfolio data into clear, actionable reporting.",
+//   },
+//   {
+//     name: "Mohammed Jimoh",
+//     role: "Engineer",
+//     photo: "/images/user3.png",
+//     bio: "Mohammed builds and maintains the systems that power Flamestar's portfolio monitoring and reporting infrastructure.",
+//   },
+//   {
+//     name: "Favor Nonso",
+//     role: "Designer",
+//     photo: "/images/user2.png",
+//     bio: "Favor shapes the way clients experience Flamestar's digital tools, designing clear, trustworthy interfaces for a complex financial product.",
+//   },
+//   {
+//     name: "Dada Joshua",
+//     role: "Engineer",
+//     photo: "/images/user1.png",
+//     bio: "Dada works across Flamestar's engineering stack, focused on the reliability and security of the systems clients depend on.",
+//   },
+//   {
+//     name: "Anu Alabi",
+//     role: "Analyst",
+//     photo: "/images/user6.png",
+//     bio: "Anu supports the investment team with data analysis and research, helping translate market signals into actionable portfolio insights.",
+//   },
+//   {
+//     name: "Gbenga Ahmed",
+//     role: "Support Lead",
+//     photo: "/images/user5.png",
+//     bio: "Gbenga leads client support at Flamestar, making sure every enquiry is met with clarity, care, and a fast response.",
+//   },
+// ];
 
 
 export default function AboutPage() {
@@ -101,8 +95,8 @@ export default function AboutPage() {
       description: "Licensed by the Securities and Exchange Commission, Nigeria.",
     },
     {
-      title: "Three Asset Classes",
-      description: "Fixed income, equities, and alternative investments.",
+      title: "Asset Classes",
+      description: "Fixed income, equities, collectives investments and alternative investments.",
     },
     {
       title: "Fiduciary Standard",
@@ -118,7 +112,6 @@ export default function AboutPage() {
         backgroundImage="/images/about-zuma-rock.webp"
         imageCredit={["Zuma Rock, Abuja, Nigeria.", "Image Courtesy of iStockphoto & Lingbeek"]}
         size="tall"
-        className="mt-4 lg:mt-2"
       />
 
       <AboutIntro />
@@ -133,22 +126,22 @@ export default function AboutPage() {
         </span>
       </div>
 
-        <TeamCarousel
+      <TeamCarousel
         title="Leadership"
         subtitle="Experienced, accountable, and personally invested in your success."
         members={leadershipTeam}
         tone="signal"
         className="mt-10 py-10"
       />
- 
+{/* 
       <TeamCarousel
         title="Engineroom"
         subtitle="The amazing people keeping the boat running and making our clients happy"
         members={engineroomTeam}
         tone="flame"
         className="py-10"
-      />
- 
+      /> */}
+
 
       <section className={`mx-auto max-w-7xl px-6 py-20 lg:px-10`}>
         <div className="flex flex-col md:flex-row items-center justify-evenly">

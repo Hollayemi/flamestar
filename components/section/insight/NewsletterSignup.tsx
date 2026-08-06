@@ -14,12 +14,43 @@ export function NewsletterSignup({
   description = "Receive curated investment insights, market updates, and exclusive reports directly in your inbox.",
   className = "",
 }: NewsletterSignupProps) {
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // Wire this up to your newsletter provider of choice.
-    setSubmitted(true);
+    setStatus("submitting");
+    setErrorMessage("");
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    const payload = {
+      formType: "newsletter",
+      formData: {
+        name: formData.get("name"),
+        email: formData.get("email"),
+      },
+    };
+
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        const data = await response.json().catch(() => ({}));
+        throw new Error(data.error || "Something went wrong. Please try again.");
+      }
+
+      setStatus("success");
+      form.reset();
+    } catch (error) {
+      setStatus("error");
+      setErrorMessage(error instanceof Error ? error.message : "Something went wrong. Please try again.");
+    }
   };
 
   return (
@@ -45,6 +76,7 @@ export function NewsletterSignup({
               <span>Name*</span>
               <input
                 type="text"
+                name="name"
                 required
                 placeholder="Your full name"
                 className="rounded-lg bg-paper px-4 py-3 text-sm text-ink placeholder:text-muted-light focus:outline-none"
@@ -54,16 +86,25 @@ export function NewsletterSignup({
               <span>Email Address*</span>
               <input
                 type="email"
+                name="email"
                 required
                 placeholder="your@company.com"
                 className="rounded-lg bg-paper px-4 py-3 text-sm text-ink placeholder:text-muted-light focus:outline-none"
               />
             </label>
+
+            {status === "error" && (
+              <p className="text-xs text-red-300" role="alert">
+                {errorMessage}
+              </p>
+            )}
+
             <button
               type="submit"
-              className="mt-10 rounded-xl bg-flame py-3.5 text-sm font-medium text-paper transition-colors hover:bg-flame-deep"
+              disabled={status === "submitting"}
+              className="mt-10 rounded-xl bg-flame py-3.5 text-sm font-medium text-paper transition-colors hover:bg-flame-deep disabled:cursor-not-allowed disabled:opacity-60"
             >
-              {submitted ? "Subscribed" : "Subscribe Now"}
+              {status === "submitting" ? "Subscribing..." : status === "success" ? "Subscribed" : "Subscribe to Flamestar Market Pulse"}
             </button>
           </form>
         </div>

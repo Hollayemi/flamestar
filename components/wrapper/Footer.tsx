@@ -90,7 +90,7 @@ export function Footer() {
         </div>
 
         <div className="mt-14 border-t border-black pt-6">
-          <p className="text-xs leading-relaxed text-black pr-10">
+          <p className="text-xs leading-relaxed text-black max-w-5xl">
             <span className="font-medium text-black">Disclaimer: </span>
              Investing involves risk, including the possible loss of capital. Past performance 
             is not a guarantee of future results. Nothing on this 
@@ -98,6 +98,7 @@ export function Footer() {
             to buy or sell any security. Flamestar Capital Limited does not guarantee 
             any return. Please seek professional advice before making investment decisions.
           </p>
+          <p className="font-medium text-xs text-black mt-4 max-w-4xl">Flamestar Capital Limited (RC7275854) is registered and regulated by the Securities and Exchange Commission of Nigeria.</p>
         </div>
 
         <div className="mt-6 flex flex-col-reverse mb-18 items-start justify-between gap-4 sm:flex-row sm:items-center">

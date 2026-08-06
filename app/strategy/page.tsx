@@ -43,7 +43,6 @@ export default function StrategyPage() {
         title="A Disciplined Approach to Wealth Creation"
         backgroundImage="/images/strategy.webp"
         size="tall"
-        className="mt-4 lg:mt-2"
       />
 
       <InsightsIntro

@@ -33,7 +33,6 @@ export default function OurFundsPage() {
         title="Resilient Portfolios for Complex Objectives."
         backgroundImage="/images/our_fund.webp"
         size="tall"
-        className="mt-4 lg:mt-2"
       />
 
       <Pillars

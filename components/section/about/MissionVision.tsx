@@ -24,7 +24,7 @@ export function MissionVision({
           <span className="rounded-full border h-8! leading-8! border-black/10 bg-paper px-4  font-mono!  text-[10px] font-regular uppercase tracking-[0.16em] text-ink/70">
             {missionLabel}
           </span>
-          <p className="max-w-2xl font-display text-xl font-semibold leading-snug text-ink sm:text-2xl">
+          <p className="max-w-2xl font-display font-geist text-xl font-normal leading-snug text-ink sm:text-xl">
             {mission}
           </p>
         </div>
@@ -43,7 +43,7 @@ export function MissionVision({
           <span className="mt-10 inline-block rounded-full border border-black/10 bg-paper px-4 py-1.5 font-mono text-[10px] font-medium uppercase tracking-[0.16em] text-ink/70">
             {visionLabel}
           </span>
-          <p className="mt-6 max-w-2xl font-display text-xl font-semibold leading-snug text-ink sm:text-2xl">
+          <p className="mt-6 max-w-2xl font-display text-xl font-normal font-geist leading-snug text-ink sm:text-xl">
             {vision}
           </p>
         </div>

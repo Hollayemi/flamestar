@@ -36,7 +36,7 @@ export function AboutIntro({
           <ul className="mt-5 flex flex-col gap-2.5">
             {audience.map((item) => (
               <li key={item} className="flex items-center gap-3 text-sm text-ink">
-                <span className="h-4 w-2 shrink-0 rounded-[3px] bg-flame" />
+                <span className="h-3 w-1 shrink-0 rounded-[3px] bg-flame" />
                 {item}
               </li>
             ))}

@@ -20,7 +20,7 @@ const defaultItems: TrustFeatureItem[] = [
   },
   {
     title: "Asset Classes",
-    description: "Fixed income, equities, collectives and alternative investments.",
+    description: "Fixed income, equities, collectives investments and alternative investments.",
   },
   {
     title: "Fully Transparent",

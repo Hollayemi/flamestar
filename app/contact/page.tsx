@@ -12,7 +12,6 @@ export default function ContactPage() {
         title="Let's Build Your Financial Future Together"
         backgroundImage="/images/contact.webp"
         size="tall"
-        className="mt-4 lg:mt-2"
       />
 
       <ContactIntro />

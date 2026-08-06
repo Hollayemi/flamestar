@@ -6,9 +6,10 @@ export type PillarCardProps = {
   number: string;
   title: string;
   description: string;
+  shadow?: boolean
 };
 
-export function PillarCard({ number, title, description }: PillarCardProps) {
+export function PillarCard({ number, title, description, shadow }: PillarCardProps) {
   const prefersReducedMotion = useReducedMotion();
 
   return (
@@ -17,7 +18,7 @@ export function PillarCard({ number, title, description }: PillarCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.5 }}
       transition={{ duration: 0.45, ease: "easeOut" }}
-      className="flex flex-col gap-4 shadow-md rounded-2xl bg-paper-soft p-8 border border-gray-200"
+      className={`flex flex-col gap-4 ${shadow && "shadow-sm"} rounded-2xl bg-paper-soft p-8 border border-gray-200`}
     >
       <span className="font-display text-2xl font-semibold text-signal">{number}</span>
       <h3 className="font-display text-base font-semibold text-ink">{title}</h3>

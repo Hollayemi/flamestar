@@ -76,7 +76,6 @@ export default function PrivacyPolicyPage() {
         title="Turn insights into action"
         backgroundImage="/images/privacy.webp"
         size="tall"
-        className="mt-4 lg:mt-2"
       />
 
       <LegalIntro paragraphs={introParagraphs} />

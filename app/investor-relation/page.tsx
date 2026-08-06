@@ -34,7 +34,6 @@ export default function InvestorRelationsPage() {
         title="Transparency. Trust. Performance."
         backgroundImage="/images/investor-relation.webp"
         size="tall"
-        className="mt-4 lg:mt-2"
       />
 
       <Pillars

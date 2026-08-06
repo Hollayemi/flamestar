@@ -20,7 +20,6 @@ export default function InsightsPage() {
         description="Stay ahead of the market with expert analysis, data-driven perspectives, and strategic insights designed to help you make informed investment decisions."
         backgroundImage="/images/market-insight.webp"
         size="tall"
-        className="mt-4 lg:mt-2"
       />
 
       <InsightsIntro />
@@ -29,7 +28,7 @@ export default function InsightsPage() {
         image="/images/insight.webp"
         title="Building Wealth with Discipline: Why Process Beats Prediction"
         description="Markets are unpredictable; a good process is not. Here is why we trust discipline over forecasts."
-        cta={{ label: "Read Full Report", href: "/market-insights/insight" }}
+        cta={{ label: "Read Full Report", href: "/market-insights/building-wealth-with-discipline" }}
       />
 
       <InsightsValueProps />

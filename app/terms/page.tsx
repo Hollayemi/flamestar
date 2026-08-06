@@ -53,7 +53,6 @@ export default function TermsAndConditionsPage() {
         title="Turn insights into action"
         backgroundImage="/images/termsOfService.webp"
         size="tall"
-        className="mt-4 lg:mt-2"
       />
 
       <LegalIntro title="Terms & Conditions" paragraphs={termsParagraphs} />

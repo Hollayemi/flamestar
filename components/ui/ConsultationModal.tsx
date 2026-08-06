@@ -12,6 +12,8 @@ export function ConsultationModal() {
   const { isOpen, close } = useConsultation();
   const [message, setMessage] = useState("");
   const [agreed, setAgreed] = useState(false);
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
     if (!isOpen) return;
@@ -29,10 +31,57 @@ export function ConsultationModal() {
     };
   }, [isOpen, close]);
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  // Reset local form state whenever the modal is closed
+  useEffect(() => {
+    if (!isOpen) {
+      setStatus("idle");
+      setErrorMessage("");
+    }
+  }, [isOpen]);
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // Wire this up to your submission endpoint of choice.
-    close();
+    setStatus("submitting");
+    setErrorMessage("");
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    const payload = {
+      formType: "consultation",
+      formData: {
+        name: formData.get("name"),
+        email: formData.get("email"),
+        phone: formData.get("phone"),
+        investmentInterest: formData.get("investmentInterest"),
+        message: formData.get("message"),
+        source: formData.get("source") || undefined,
+      },
+    };
+
+    try {
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        const data = await response.json().catch(() => ({}));
+        throw new Error(data.error || "Something went wrong. Please try again.");
+      }
+
+      setStatus("success");
+      form.reset();
+      setMessage("");
+      setAgreed(false);
+
+      // Give the success state a moment to show before closing
+      setTimeout(() => close(), 1200);
+    } catch (error) {
+      setStatus("error");
+      setErrorMessage(error instanceof Error ? error.message : "Something went wrong. Please try again.");
+    }
   };
 
   return (
@@ -107,11 +156,11 @@ export function ConsultationModal() {
                 />
               </Field>
 
-              <Field label="Message" required>
+              <Field label="Message">
                 <div className="relative">
                   <textarea
                     name="message"
-                    required
+                    // required
                     maxLength={MESSAGE_LIMIT}
                     value={message}
                     onChange={(event) => setMessage(event.target.value)}
@@ -153,11 +202,22 @@ export function ConsultationModal() {
                 </span>
               </label>
 
+              {status === "error" && (
+                <p className="text-sm text-red-600" role="alert">
+                  {errorMessage}
+                </p>
+              )}
+
               <button
                 type="submit"
-                className="mt-1 w-full rounded-xl bg-ink py-3.5 text-sm font-medium text-paper transition-colors hover:bg-ink-soft"
+                disabled={status === "submitting"}
+                className="mt-1 w-full rounded-xl bg-ink py-3.5 text-sm font-medium text-paper transition-colors hover:bg-ink-soft disabled:cursor-not-allowed disabled:opacity-60"
               >
-                Schedule a Consultation
+                {status === "submitting"
+                  ? "Sending..."
+                  : status === "success"
+                  ? "Request Sent"
+                  : "Schedule a Consultation"}
               </button>
             </form>
           </motion.div>
