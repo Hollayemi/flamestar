@@ -25,7 +25,7 @@ export function TeamMemberCard({
   active = false,
   tone = "signal",
 }: TeamMemberCardProps) {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   const ringColor = tone === "flame" ? "border-flame" : "border-signal";
   const accent = tone === "flame" ? "text-flame" : "text-signal";
 
