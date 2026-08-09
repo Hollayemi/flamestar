@@ -22,10 +22,10 @@ export function FeaturedInsight({
     <section className={`mx-auto max-w-7xl px-6 py-6 lg:px-10 ${className}`}>
       <div className="grid gap-8 rounded-2xl border border-black/8 bg-paper-soft p-6 sm:p-8 lg:grid-cols-[320px_1fr] lg:items-center">
         <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-paper">
-          <Image
+          <img
             src={image}
             alt={title}
-            fill
+            // fill
             sizes="(min-width: 1024px) 320px, 100vw"
             className="object-cover"
           />

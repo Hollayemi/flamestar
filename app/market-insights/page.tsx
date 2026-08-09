@@ -7,11 +7,16 @@ import { InsightsValueProps } from "@/components/section/insight/InsightsValuePr
 import { InsightCategory } from "@/components/section/insight/InsightCategory";
 import { NewsletterSignup } from "@/components/section/insight/NewsletterSignup";
 import { TrustSignals } from "@/components/ui/TrustSignals";
-import { categories } from "./data";
+import { getFeaturedInsight, getPublishedInsightCategories } from "@/lib/blog/queries";
 
+export const dynamic = "force-dynamic";
 
+export default async function InsightsPage() {
+  const [categories, featured] = await Promise.all([
+    getPublishedInsightCategories(),
+    getFeaturedInsight(),
+  ]);
 
-export default function InsightsPage() {
   return (
     <HomeWrapper>
       <Hero
@@ -25,23 +30,31 @@ export default function InsightsPage() {
       <InsightsIntro />
 
       <FeaturedInsight
-        image="/images/insight.webp"
-        title="Building Wealth with Discipline: Why Process Beats Prediction"
-        description="Markets are unpredictable; a good process is not. Here is why we trust discipline over forecasts."
-        cta={{ label: "Read Full Report", href: "/market-insights/building-wealth-with-discipline" }}
+        image={featured?.image || "/images/insight.webp"}
+        title={featured?.title || "Building Wealth with Discipline: Why Process Beats Prediction"}
+        description={
+          featured?.description ||
+          "Markets are unpredictable; a good process is not. Here is why we trust discipline over forecasts."
+        }
+        cta={{
+          label: "Read Full Report",
+          href: featured?.href || "/market-insights",
+        }}
       />
 
       <InsightsValueProps />
 
-      <div className="mx-auto flex max-w-7xl justify-center px-6 pt-14 lg:px-10">
-        <span className="rounded-full border border-black/10 bg-paper px-4 py-1.5 font-mono text-[10px] font-medium uppercase tracking-[0.16em] text-ink/70">
-          Other Insights
-        </span>
-      </div>
+      {categories.length > 0 && (
+        <div className="mx-auto flex max-w-7xl justify-center px-6 pt-14 lg:px-10">
+          <span className="rounded-full border border-black/10 bg-paper px-4 py-1.5 font-mono text-[10px] font-medium uppercase tracking-[0.16em] text-ink/70">
+            Other Insights
+          </span>
+        </div>
+      )}
 
-      {categories.map((category) => !category.hide ? (
+      {categories.map((category) => (
         <InsightCategory key={category.title} {...category} />
-      ): null )}
+      ))}
 
       <NewsletterSignup className="pb-16 pt-6" />
 
