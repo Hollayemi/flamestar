@@ -41,7 +41,7 @@ export const primaryNav: NavItem[] = [
 export const footerLinks: NavLink[] = [
   { label: "About Us", href: "/about" },
   { label: "Investment Strategy", href: "/strategy" },
-  { label: "Newsletter Archive", href: "/newsletter" },
+  { label: "Newsletter Archive", href: "/newsletters" },
   { label: "Contact Us", href: "/contact" },
   { label: "Terms & Conditions", href: "/terms" },
   { label: "Privacy Policy", href: "/privacy" },
