@@ -9,7 +9,7 @@ export type TrackRecordOverviewProps = {
 };
 
 const defaultPoints = [
-  "Strong lending portfolio performance",
+  "Consistent Growth Equities",
   "Strategic real estate investments",
   "Diversified asset allocation",
 ];

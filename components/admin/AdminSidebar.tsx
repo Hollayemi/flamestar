@@ -12,6 +12,7 @@ const navItems = [
 
 export function AdminSidebar() {
   const pathname = usePathname();
+
   return (
     <aside className="hidden w-60 shrink-0 border-r border-black/8 bg-paper sm:block">
       <nav className="flex flex-col gap-1 p-4">

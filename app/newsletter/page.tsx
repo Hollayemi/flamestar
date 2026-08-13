@@ -1,56 +1,85 @@
-import Link from "next/link";
-import { Mail, ArrowRight } from "lucide-react";
+import { Mail, Eye, Download, FileText } from "lucide-react";
 import { HomeWrapper } from "@/components/wrapper";
 import { Hero } from "@/components/section/Hero";
-import { getSentNewsletters } from "@/lib/newsletter/queries";
+import { dbConnect } from "@/lib/db/connect";
+import { NewsletterIssue } from "@/lib/db/models/NewsletterIssue";
+import { toDownloadUrl } from "@/lib/cloudinary/client";
 
 export const dynamic = "force-dynamic";
 
+function formatBytes(bytes?: number) {
+  if (!bytes) return "";
+  const mb = bytes / (1024 * 1024);
+  return mb >= 1 ? `${mb.toFixed(1)} MB` : `${Math.round(bytes / 1024)} KB`;
+}
+
 export default async function NewsletterArchivePage() {
-  const newsletters = await getSentNewsletters();
+  await dbConnect();
+  const issues = await NewsletterIssue.find().sort({ datePublished: -1 }).lean();
 
   return (
     <HomeWrapper>
       <Hero
         eyebrow="Newsletter"
         title="Flamestar Market Pulse"
-        description="Our weekly intelligence brief for the discerning investor, market snapshots, portfolio insights, and wealth strategy, archived for you to catch up on anytime."
+        description="Our newsletter archive, market snapshots, portfolio insights, and wealth strategy, available to view or download anytime."
         backgroundImage="/images/market-insight.webp"
       />
 
       <div className="mx-auto max-w-4xl px-6 py-16 lg:px-10">
-        {newsletters.length === 0 ? (
+        {issues.length === 0 ? (
           <div className="flex flex-col items-center gap-3 rounded-2xl border border-dashed border-black/12 px-6 py-20 text-center">
             <div className="flex h-12 w-12 items-center justify-center rounded-full bg-paper-soft">
               <Mail className="h-5 w-5 text-muted-light" />
             </div>
-            <p className="text-sm text-muted-light">No issues have been sent yet. Check back soon.</p>
+            <p className="text-sm text-muted-light">No issues have been published yet. Check back soon.</p>
           </div>
         ) : (
-          <ul className="flex flex-col divide-y divide-black/8 rounded-2xl border border-black/8">
-            {newsletters.map((n) => (
-              <li key={n.id}>
-                <Link
-                  href={`/newsletter/${n.id}`}
-                  className="flex items-center justify-between gap-4 px-6 py-5 transition-colors hover:bg-paper-soft"
-                >
+          <ul className="flex flex-col gap-4">
+            {issues.map((issue) => (
+              <li
+                key={issue._id.toString()}
+                className="flex flex-col gap-4 rounded-2xl border border-black/8 bg-paper p-5 sm:flex-row sm:items-center sm:justify-between"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-flame/10">
+                    <FileText className="h-5 w-5 text-flame" />
+                  </div>
                   <div className="min-w-0">
-                    <p className="truncate font-display text-base font-semibold text-ink sm:text-lg">
-                      {n.subject}
+                    <p className="font-display text-base font-semibold text-ink sm:text-lg">
+                      {issue.title}
                     </p>
                     <p className="mt-1 text-xs text-muted-light">
-                      {n.dateLine ||
-                        (n.sentAt
-                          ? new Date(n.sentAt).toLocaleDateString("en-GB", {
-                              day: "2-digit",
-                              month: "long",
-                              year: "numeric",
-                            })
-                          : "")}
+                      {issue.datePublished
+                        ? new Date(issue.datePublished).toLocaleDateString("en-GB", {
+                            day: "2-digit",
+                            month: "long",
+                            year: "numeric",
+                          })
+                        : ""}
+                      {issue.fileSize ? ` · ${formatBytes(issue.fileSize)}` : ""}
                     </p>
                   </div>
-                  <ArrowRight className="h-4 w-4 shrink-0 text-ink/40" />
-                </Link>
+                </div>
+
+                <div className="flex shrink-0 items-center gap-2 sm:ml-4">
+                  <a
+                    href={issue.pdfUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-black/10 px-4 py-2 text-xs font-medium text-ink/70 transition-colors hover:border-ink/30 hover:text-ink"
+                  >
+                    <Eye className="h-3.5 w-3.5" />
+                    View
+                  </a>
+                  <a
+                    href={toDownloadUrl(issue.pdfUrl)}
+                    className="inline-flex items-center gap-1.5 rounded-full bg-flame px-4 py-2 text-xs font-medium text-paper transition-colors hover:bg-flame-deep"
+                  >
+                    <Download className="h-3.5 w-3.5" />
+                    Download
+                  </a>
+                </div>
               </li>
             ))}
           </ul>

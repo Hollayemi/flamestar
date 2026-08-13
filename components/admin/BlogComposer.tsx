@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import { ArticleBody, type ArticleBlock } from "@/components/section/insight/ArticleBody";
 import { BLOG_CATEGORIES } from "@/lib/blog/categories";
+import { ImageUploadField } from "./ImageUploadField";
 
 type LocalBlock = ArticleBlock & { _key: string };
 
@@ -291,13 +292,8 @@ export function BlogComposer({
                 />
               </Field>
 
-              <Field label="Cover Image URL">
-                <input
-                  value={coverImage}
-                  onChange={(e) => setCoverImage(e.target.value)}
-                  className={inputClass}
-                  placeholder="/images/insight.webp"
-                />
+              <Field label="Cover Image">
+                <ImageUploadField value={coverImage} onChange={setCoverImage} />
               </Field>
 
               <div className="grid grid-cols-2 gap-4">
@@ -487,12 +483,7 @@ function BlockEditor({
 
       {block.type === "image" ? (
         <div className="flex flex-col gap-2">
-          <input
-            value={block.src}
-            onChange={(e) => onChange({ src: e.target.value })}
-            className={inputClass}
-            placeholder="/images/insight.webp"
-          />
+          <ImageUploadField value={block.src} onChange={(url) => onChange({ src: url })} />
           <input
             value={block.alt ?? ""}
             onChange={(e) => onChange({ alt: e.target.value })}

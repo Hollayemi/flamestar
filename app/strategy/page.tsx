@@ -41,7 +41,7 @@ export default function StrategyPage() {
       <Hero
         eyebrow="Investment Strategy"
         title="A Disciplined Approach to Wealth Creation"
-        backgroundImage="/images/strategy.webp"
+        backgroundImage="/images/top.webp"
         size="tall"
       />
 

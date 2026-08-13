@@ -1,5 +1,5 @@
-import { NewNewsletterStart } from "@/components/admin/NewNewsletterStart";
+import { NewsletterUploadForm } from "@/components/admin/NewsletterUploadForm";
 
 export default function NewNewsletterPage() {
-  return <NewNewsletterStart />;
+  return <NewsletterUploadForm mode="create" />;
 }

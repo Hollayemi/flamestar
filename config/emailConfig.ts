@@ -17,7 +17,7 @@ export const emailMapping = {
     subject: "New Consultation Request",
   },
   newsletter: {
-    recipients: (process.env.NEWSLETTER_RECIPIENTS || "hello@flamestarcapital.com").split(","),
+    recipients: (process.env.NEWSLETTER_RECIPIENTS || "mimi@flamestarcapital.com").split(","),
     subject: "New Newsletter Subscriber",
   },
 };
