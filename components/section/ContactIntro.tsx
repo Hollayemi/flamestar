@@ -42,7 +42,11 @@ export function ContactIntro({
           </div>
         </div>
 
-        <ContactForm />
+        <ContactForm
+          isConsultation
+          buttonText="Schedule a Consultation"
+          showSource
+        />
       </div>
     </section>
   );

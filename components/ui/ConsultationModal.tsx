@@ -3,17 +3,11 @@
 import { useEffect, useState, type FormEvent } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
-import Link from "next/link";
 import { useConsultation } from "../../lib/consultation-context";
-
-const MESSAGE_LIMIT = 200;
+import { ContactForm } from "./ContactForm";
 
 export function ConsultationModal() {
   const { isOpen, close } = useConsultation();
-  const [message, setMessage] = useState("");
-  const [agreed, setAgreed] = useState(false);
-  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
-  const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
     if (!isOpen) return;
@@ -31,58 +25,7 @@ export function ConsultationModal() {
     };
   }, [isOpen, close]);
 
-  // Reset local form state whenever the modal is closed
-  useEffect(() => {
-    if (!isOpen) {
-      setStatus("idle");
-      setErrorMessage("");
-    }
-  }, [isOpen]);
 
-  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    setStatus("submitting");
-    setErrorMessage("");
-
-    const form = event.currentTarget;
-    const formData = new FormData(form);
-
-    const payload = {
-      formType: "consultation",
-      formData: {
-        name: formData.get("name"),
-        email: formData.get("email"),
-        phone: formData.get("phone"),
-        investmentInterest: formData.get("investmentInterest"),
-        message: formData.get("message"),
-        source: formData.get("source") || undefined,
-      },
-    };
-
-    try {
-      const response = await fetch("/api/send-email", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-
-      if (!response.ok) {
-        const data = await response.json().catch(() => ({}));
-        throw new Error(data.error || "Something went wrong. Please try again.");
-      }
-
-      setStatus("success");
-      form.reset();
-      setMessage("");
-      setAgreed(false);
-
-      // Give the success state a moment to show before closing
-      setTimeout(() => close(), 1200);
-    } catch (error) {
-      setStatus("error");
-      setErrorMessage(error instanceof Error ? error.message : "Something went wrong. Please try again.");
-    }
-  };
 
   return (
     <AnimatePresence>
@@ -115,134 +58,14 @@ export function ConsultationModal() {
               <X className="h-4 w-4" />
             </button>
 
-            <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-              <Field label="Name" required>
-                <input
-                  type="text"
-                  name="name"
-                  required
-                  placeholder="Your full name"
-                  className="w-full rounded-lg border border-black/10 bg-paper px-4 py-3 text-sm text-ink placeholder:text-muted-light focus:border-ink/30 focus:outline-none"
-                />
-              </Field>
-
-              <Field label="Email Address" required>
-                <input
-                  type="email"
-                  name="email"
-                  required
-                  placeholder="your@company.com"
-                  className="w-full rounded-lg border border-black/10 bg-paper px-4 py-3 text-sm text-ink placeholder:text-muted-light focus:border-ink/30 focus:outline-none"
-                />
-              </Field>
-
-              <Field label="Phone Number" required>
-                <input
-                  type="tel"
-                  name="phone"
-                  required
-                  placeholder="Your phone number"
-                  className="w-full rounded-lg border border-black/10 bg-paper px-4 py-3 text-sm text-ink placeholder:text-muted-light focus:border-ink/30 focus:outline-none"
-                />
-              </Field>
-
-              <Field label="Investment Interest" required>
-                <input
-                  type="text"
-                  name="investmentInterest"
-                  required
-                  placeholder="Where your investment goes"
-                  className="w-full rounded-lg border border-black/10 bg-paper px-4 py-3 text-sm text-ink placeholder:text-muted-light focus:border-ink/30 focus:outline-none"
-                />
-              </Field>
-
-              <Field label="Message">
-                <div className="relative">
-                  <textarea
-                    name="message"
-                    // required
-                    maxLength={MESSAGE_LIMIT}
-                    value={message}
-                    onChange={(event) => setMessage(event.target.value)}
-                    placeholder="E.g., That engagement metal would floor didn't strategies leverage wheel pee believe."
-                    rows={3}
-                    className="w-full resize-none rounded-lg border border-black/10 bg-paper px-4 py-3 pb-6 text-sm text-ink placeholder:text-muted-light focus:border-ink/30 focus:outline-none"
-                  />
-                  <span className="pointer-events-none absolute bottom-2.5 right-3 text-xs text-muted-light">
-                    {message.length}/{MESSAGE_LIMIT}
-                  </span>
-                </div>
-              </Field>
-
-              <Field label="How did you hear about us">
-                <input
-                  type="text"
-                  name="source"
-                  placeholder="E.g. Google, a colleague, or LinkedIn (Optional)"
-                  className="w-full rounded-lg border border-black/10 bg-paper px-4 py-3 text-sm text-ink placeholder:text-muted-light focus:border-ink/30 focus:outline-none"
-                />
-              </Field>
-
-              <label className="flex items-start gap-3 text-sm text-ink">
-                <input
-                  type="checkbox"
-                  name="agree"
-                  required
-                  checked={agreed}
-                  onChange={(event) => setAgreed(event.target.checked)}
-                  className="mt-0.5 h-4 w-4 shrink-0 rounded border-black/20 text-ink focus:ring-ink/30"
-                />
-                <span className="leading-relaxed text-muted-light">
-                  I agree that Flamestar Capital may contact me about my enquiry. I have read and
-                  accepted the{" "}
-                  <Link href="/privacy" className="text-ink underline underline-offset-2">
-                    Privacy Policy
-                  </Link>
-                  .
-                </span>
-              </label>
-
-              {status === "error" && (
-                <p className="text-sm text-red-600" role="alert">
-                  {errorMessage}
-                </p>
-              )}
-
-              <button
-                type="submit"
-                disabled={status === "submitting"}
-                className="mt-1 w-full rounded-xl bg-ink py-3.5 text-sm font-medium text-paper transition-colors hover:bg-ink-soft disabled:cursor-not-allowed disabled:opacity-60"
-              >
-                {status === "submitting"
-                  ? "Sending..."
-                  : status === "success"
-                  ? "Request Sent"
-                  : "Schedule a Consultation"}
-              </button>
-            </form>
+            <ContactForm
+              isConsultation
+              buttonText="Schedule a Consultation"
+              showSource
+            />
           </motion.div>
         </motion.div>
       )}
     </AnimatePresence>
-  );
-}
-
-function Field({
-  label,
-  required,
-  children,
-}: {
-  label: string;
-  required?: boolean;
-  children: React.ReactNode;
-}) {
-  return (
-    <label className="flex flex-col gap-2 text-sm text-ink">
-      <span>
-        {label}
-        {required && <span aria-hidden="true">*</span>}
-      </span>
-      {children}
-    </label>
   );
 }
