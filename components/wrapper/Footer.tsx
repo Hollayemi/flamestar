@@ -98,7 +98,7 @@ export function Footer() {
             to buy or sell any security. Flamestar Capital Limited does not guarantee 
             any return. Please seek professional advice before making investment decisions.
           </p>
-          <p className="font-medium text-xs text-black mt-4 max-w-4xl">Flamestar Capital Limited (RC7275854) is registered and regulated by the Securities and Exchange Commission of Nigeria.</p>
+          <p className="font-medium text-xs text-black mt-4 max-w-4xl">FFlamestar Capital Limited (RC7275854) is Registered and Regulated by the Securities and Exchange Commission of Nigeria and an NDPC Compliant Company</p>
         </div>
 
         <div className="mt-6 flex flex-col-reverse mb-18 items-start justify-between gap-4 sm:flex-row sm:items-center">
@@ -194,7 +194,7 @@ export function Footer() {
             to buy or sell any security. Flamestar Capital Limited does not guarantee 
             any return. Please seek professional advice before making investment decisions.
           </p>
-           <p className="font-medium text-xs text-black mt-4 max-w-4xl">Flamestar Capital Limited (RC7275854) is registered and regulated by the Securities and Exchange Commission of Nigeria.</p>
+           <p className="font-medium text-xs text-black mt-4 max-w-4xl">Flamestar Capital Limited (RC7275854) is Registered and Regulated by the Securities and Exchange Commission of Nigeria and an NDPC Compliant Company</p>
         </div>
 
         {/* Bottom */}
