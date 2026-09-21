@@ -89,7 +89,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 border-t border-black pt-6">
+        <div className="mt-14 border-t border-black pt-6 hidden">
           <p className="text-xs leading-relaxed text-black max-w-5xl">
             <span className="font-medium text-black">Disclaimer: </span>
              Investing involves risk, including the possible loss of capital. Past performance 
@@ -186,7 +186,7 @@ export function Footer() {
         </div>
 
         {/* Disclaimer */}
-        <div className="border-t border-gray-100 pt-5 md:pr-50">
+        <div className="border-t border-gray-100 pt-5 md:pr-50 hidden">
           <p className="text-[11px] leading-relaxed text-gray-500">
             <span className="font-semibold">Disclaimer:</span>  Investing involves risk, including the possible loss of capital. Past performance 
             is not a guarantee of future results. Nothing on this 
