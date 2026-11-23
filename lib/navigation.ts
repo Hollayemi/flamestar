@@ -45,6 +45,7 @@ export const footerLinks: NavLink[] = [
   { label: "Contact Us", href: "/contact" },
   { label: "Terms & Conditions", href: "/terms" },
   { label: "Privacy Policy", href: "/privacy" },
+  { label: "Whistleblowing Policy", href: "/whistleblowing" },
 ];
 
 export const companyInfo = {

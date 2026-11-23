@@ -50,7 +50,7 @@ export function TeamMemberCard({
           type="button"
           onClick={() => setIsOpen(true)}
           aria-label={`Read more about ${name}`}
-          className={`absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white backdrop-blur-sm transition-opacity hover:bg-white/20 ${
+          className={`absolute bg-black! right-3 top-3 flex h-8 w-8 items-center justify-center rounded-full border border-white/25  text-white backdrop-blur-sm transition-opacity hover:bg-white/20 ${
             isOpen ? "pointer-events-none opacity-0" : "opacity-100"
           }`}
         >

@@ -107,7 +107,7 @@ export function Header() {
         </div>
         <div className="flex items-center gap-3">
           <Link
-            href="/login"
+            href="https://fcl.portal.prod.mywealthcare.io/auth/signin"
             className="hidden rounded-full border border-gray-300 px-5 py-2 text-sm font-medium text-gray-700 bg-gray-50 transition-colors hover:border-ink hover:bg-gray-200 hover:text-paper lg:block"
           >
             Client Login
@@ -145,7 +145,7 @@ export function Header() {
                 />
               ))}
               <Link
-                href="/login"
+                href="https://fcl.portal.prod.mywealthcare.io/auth/signin"
                 onClick={() => setMobileOpen(false)}
                 className="mt-2 rounded-full bg-ink px-5 py-3 text-center text-sm font-medium text-paper"
               >

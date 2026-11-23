@@ -2,10 +2,10 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, ArrowUp, Flame, MapPin, Phone, Heart, ChevronUp } from "lucide-react";
+import { ArrowUp, MapPin, Phone, ChevronUp } from "lucide-react";
 import { companyInfo, footerLinks, socialLinks } from "@/lib/navigation";
 import { socialIconMap } from "@/components/ui/SocialIcons";
-import { DotMap } from "@/components/ui/DotMap";
+import Image from "next/image";
 // import { useConsultation } from "@/lib/consultation-context";
 
 export function Footer() {
@@ -98,19 +98,32 @@ export function Footer() {
             to buy or sell any security. Flamestar Capital Limited does not guarantee 
             any return. Please seek professional advice before making investment decisions.
           </p>
-          <p className="font-medium text-xs text-black mt-4 max-w-4xl">Flamestar Capital Limited (RC7275854) is Registered and Regulated by the Securities and Exchange Commission of Nigeria and an NDPC Compliant Company</p>
+          <p className="font-medium text-xs text-black mt-4 max-w-4xl">Flamestar Capital Limited (RC7275854) is duly registered and regulated by the Securities and Exchange Commission,
+Nigeria, as a Fund/Portfolio Manager and an NDPC compliant company.</p>
         </div>
 
         <div className="mt-6 flex flex-col-reverse mb-18 items-start justify-between gap-4 sm:flex-row sm:items-center">
           <div className="flex items-center gap-2">
-            <img src="/images/icon.png" alt="Flamestar Capital Logo" className="h-6 w-6" />
+            <Image
+              height={200}
+              width={200}
+              src="/images/icon.png"
+              alt="Flamestar Capital Logo"
+              className="h-6 w-6"
+            />
             <span className="text-xs text-gray-600">
               © {new Date().getFullYear()} Flamestar Capital Ltd. All rights reserved.
             </span>
           </div>
           <span className="text-xs text-gray-400 flex items-center">
             Made with 
-            <img src="/images/digitalheart.png" className="w-4 h-3 mx-2!" />
+            <Image
+              height={200}
+              width={200}
+              src="/images/digitalheart.png"
+              alt="DigitalHeart"
+              className="w-4 h-3 mx-2!"
+            />
             by <span className="text-gray-600 font-bold px-1">DigitaHeart</span>
           </span>
         </div>
@@ -194,13 +207,15 @@ export function Footer() {
             to buy or sell any security. Flamestar Capital Limited does not guarantee 
             any return. Please seek professional advice before making investment decisions.
           </p>
-           <p className="font-medium text-xs text-black mt-4 max-w-4xl">Flamestar Capital Limited (RC7275854) is Registered and Regulated by the Securities and Exchange Commission of Nigeria and an NDPC Compliant Company</p>
+           <p className="font-medium text-xs text-black mt-4 max-w-4xl">Flamestar Capital Limited (RC7275854) is duly registered and regulated by the Securities and Exchange Commission of Nigeria and an NDPC Compliant Company</p>
         </div>
 
         {/* Bottom */}
         <div className="space-y-2 text-xs text-gray-500">
           <div className="flex items-center gap-2">
-            <img
+            <Image
+              height={200}
+              width={200}
               src="/images/icon.png"
               alt="Flamestar"
               className="h-5 w-5 mx-2"
@@ -213,7 +228,13 @@ export function Footer() {
 
           <div className="flex items-center gap-1">
             Made with
-            <img src="/images/digitalheart.png" className="w-4 h-4" />
+            <Image
+              height={200}
+              width={200}
+              src="/images/digitalheart.png"
+              alt="DigitalHeart"
+              className="w-4 h-4"
+            />
             by
             <span className="font-medium text-gray-700">
               DigitaHeart
@@ -222,7 +243,13 @@ export function Footer() {
         </div>
       </div>
 
-      <img src="/images/flamestar.png" className="w-full h-auto pointer-events-none absolute bottom-[-0.4em] z-10 left-0 right-0" />
+      <Image
+        height={200}
+        width={200}
+        src="/images/flamestar.png"
+        alt="Flamestar"
+        className="w-full h-auto pointer-events-none absolute bottom-[-0.4em] z-10 left-0 right-0"
+      />
     </footer>
   );
 }

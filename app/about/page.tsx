@@ -14,25 +14,37 @@ const leadershipTeam: TeamMember[] = [
     name: "Yahaya Blessing Batare",
     role: "Chief Executive Officer",
     photo: "/images/team/member.webp",
-    bio: "Yahaya Blessing Batare is a performance driven finance executive with two decades experience across leading financial institutions, she has held senior positions in Treasury, Business Development, and Portfolio management. Known for her strategic vision, disciplined risk management, and unwavering integrity, she combines sharp financial acumen with a deep commitment to building businesses and creating value for clients and the wider public, a dependable, results-oriented leader trusted to deliver.",
+    bio: "Blessing Yahaya is a seasoned financial services professional and business development executive with over 20 years of managerial experience across wealth management, investment services, financial advisory, leasing, retail finance, sales and marketing. She has held key leadership positions at reputable institutions, including Head of Wealth Management at Rosabon Financial Services and Head of Retail and Business Development at Sovereign Finance, with earlier roles at Royal Exchange Finance Company and DEAP Capital Management & Trust Plc. She holds an MSc in Marketing and Sales from Rome Business School, Italy, and a BSc in Chemistry from Adekunle Ajasin University, and is a member of the Chartered Institute of Personnel Management and the Portfolio and Debt Management Institute. Her leadership philosophy is anchored in sustainable growth, customer satisfaction, operational excellence, and the development of high-performing teams.",
   },
   {
     name: "Olushola Adegbite",
-    role: "CHIEF FINANCE OFFICER",
-    photo: "/images/team/member1.webp",
-    bio: "Olushola Adegbite is  a Fellow of the Institute of Chartered Accountants of Nigeria (FCA) with over twenty-two years’ experience across financial management, internal audit, risk, and investment management, he has served as CFO and Head of Risk & Control at Resort Securities & Trust and built the internal audit and compliance function at St. Nicholas Hospital. IFRS-certified and a fellow across accounting and internal auditing bodies, he brings disciplined, principled leadership to safeguarding capital and driving sustainable value, a finance executive widely regarded as one of the best in his craft.",
+    role: "Chief Financial Officer",
+    photo: "/images/team/adegbite.jpeg",
+    bio: "Olushola Adegbite is a finance and governance executive with over 25 years of experience at the intersection of financial management, corporate governance, internal audit, risk management, and business strategy, spanning financial services, healthcare, telecommunications, and construction. His career began at Resort Securities & Trust Limited, where he rose from Head of Finance and Administration to Chief Financial Officer and also served as Acting Head of Risk and Control. He has since held senior roles at St. Nicholas Hospital, FiberOne Broadband, Dipote Nigeria Limited (Executive Director, Finance and Projects), and Kinlend Financial Services Limited (Managing Director). A Fellow of the Institute of Chartered Accountants of Nigeria (FCA) and the West African Association of Internal Auditors (FWAIA), he is also a Certified Forensic Auditor and Certified IFRS Practitioner. He holds a BSc in Accounting and an MBA in Operations Research from Obafemi Awolowo University, and has served on the Statutory Audit Committee of a publicly listed company and as Deputy Vice Chairman of ICAN, Lagos and District Society.",
   },
   {
     name: "Abiola Olayinka Alake",
-    role: "CHIEF COMPLIANCE OFFICER",
+    role: "Chief Compliance Officer",
     photo: "/images/team/member2.webp",
-    bio: "Abiola Olayinka Alake has nearly two decades experience in the Nigerian capital market, she has served as Chief Compliance Officer and Compliance Officer across several capital market firms, leading KYC/KYE due diligence, anti-money laundering controls, compliance audits, and regulatory reporting to the SEC and NGX. A registered SEC Sponsored Individual with a Bachelor of Science in Accounting, she is a meticulous, principled, and grounded professional dedicated to protecting clients, upholding regulatory standards, and safeguarding the integrity of every firm she serves.",
+    bio: "Abiola Alake is a compliance professional with experience across financial services and capital market operations, combining a background in accounting, business development, and regulatory compliance. She has served as Chief Compliance Officer at Brook Securities Limited and as Compliance Officer at Forthright Securities and Investments and Century Securities, where she began her career as an Accounts Officer and Marketing Executive. Her expertise includes SEC and NGX compliance requirements, as well as Anti-Money Laundering and Combating the Financing of Terrorism (AML/CFT) compliance. She holds a BSc in Accounting from Adekunle Ajasin University, Ondo State, and an OND in Financial Studies from Osun State, and is a member of the Chartered Institute of Stockbrokers and the Chief Compliance Officers of Capital Market Operators in Nigeria.",
+  },
+  {
+    name: "Remilekun Awosanya",
+    role: "Head of Operations",
+    photo: "/images/team/awosanya.jpeg", // TODO: add photo
+    bio: "Remilekun Awosanya is an experienced investment and capital market operations professional with over 10 years of progressive experience in the Nigerian financial services industry, spanning investment operations, portfolio administration, fund management support, capital market transactions, regulatory compliance, client relationship management, and business development. Prior to joining Flamestar Capital Limited, he held senior operational and investment management positions at RichGreen Master's Capital Limited, The Brook Securities Limited, and Anchoria Investment & Securities Limited, and began his career at Lambeth Capital Limited. He has sound knowledge of the Nigerian capital market regulatory environment, with practical experience in SEC, NGX, CSCS, and FMAN operational frameworks. He holds an MBA from Ladoke Akintola University of Technology, a BSc in Business Administration from the University of Lagos, and an OND in Estate Management from the Federal Polytechnic Ilaro, alongside certifications in Six Sigma White Belt, Lean Project Management, Lean Fundamentals, and AI and Workspace Automation.",
+  },
+  {
+    name: "Ismail Ayodeji Lawal",
+    role: "Head, Wealth Management",
+    photo: "/images/team/lawal.jpeg", // TODO: add photo
+    bio: "Ismail Lawal is an elite wealth management executive and capital markets strategist with over 20 years of high-impact expertise across asset management, corporate treasury operations, and institutional trading. As Head of Wealth Management at Flamestar Capital Ltd, he supports clients with structured investment solutions and long-term wealth planning. He is an Authorized Dealing Clerk (ADC) of the Nigerian Exchange Limited (NGX) and an Associate Member of the Chartered Institute of Stockbrokers (CIS). Prior to Flamestar, he served as Business Manager at Optiva Capital Partners Ltd and held multi-tiered leadership roles at MBC Securities Limited, where he headed Business Development & Sales and Operations and supervised a fixed-income treasury portfolio exceeding N5 billion. He holds an MSc in Marketing & Communications from Rome Business School, Italy, an MBA in Financial Management from Lagos State University, and an HND in Accountancy from Rufus Giwa Polytechnic, Owo.",
   },
   {
     name: "Faith Ozegbe",
-    role: "HEAD PEOPLE OPERATIONS",
+    role: "Head, People Operations",
     photo: "/images/team/member3.webp",
-    bio: "Faith Ozegbe is a thoroughbred HR generalist with years’ of progressive experience across the full employee lifecycle, she has delivered recruitment, onboarding, employee relations, and HR operations support at The Concept Group and Medicano Resources, and holds a B.Sc. (Upper Division) from Delta State University. Recognised for her integrity, confidentiality, and commitment to a positive employee experience, and known for driving measurable efficiency gains, she is building the culture and systems that help Flamestar Capital attract, develop, and retain exceptional talent.",
+    bio: "Faith Ozegbe is a People Operations professional with experience spanning human resource management, employee relations, talent acquisition, and business administration. Her approach is centered on developing effective people practices, strengthening workforce capabilities, and aligning HR initiatives with business objectives to support a productive, engaged, and high-performing workforce. She has served as HR Admin/Employee Relations Executive at The Concept Group and HR Officer at Medicano Resources Limited, gaining practical insight into the connection between effective people management, operational efficiency, and business performance. She holds a BSc in Human Anatomy from Delta State University, Abraka, Nigeria.",
   },
 ];
 

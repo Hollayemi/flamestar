@@ -54,7 +54,6 @@ export function TeamCarousel({
     const track = trackRef.current;
     if (!track) return;
     let frame = 0;
-    let timeoutId: any;
 
     const onScroll = () => {
       // Skip if we're programmatically scrolling
@@ -87,7 +86,6 @@ export function TeamCarousel({
     return () => {
       track.removeEventListener("scroll", onScroll);
       cancelAnimationFrame(frame);
-      clearTimeout(timeoutId);
     };
   }, [isScrolling]);
 
